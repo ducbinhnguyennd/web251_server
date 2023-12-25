@@ -6,6 +6,7 @@ var settingsRouter = require('./routes/settings.route');
 var accountsRouter = require('./routes/accounts.route');
 var apiAccRouter = require('./routes/acc.api');
 var homeRouter = require('./routes/home.route');
+var methodOverride = require('method-override');
 // const testRouter = require('./routes/r_test');
 var bodyParser = require("body-parser");
 const { log } = require('console');
@@ -24,10 +25,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(methodOverride('_method'));
 app.use('/home', homeRouter);
 app.use('/api', apiAccRouter);
 app.use('/accounts', accountsRouter);
 app.use('/', settingsRouter);
+
 // app.use('/test', testRouter);
 
 app.use(express.static(path.join(__dirname, '/public')));
