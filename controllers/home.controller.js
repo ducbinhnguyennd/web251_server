@@ -72,7 +72,6 @@ exports.add = async (req, res, next) => {
       msg = "Lưu thành công";
       res.send({ message: msg });
     } catch (error) {
-      msg = "Error" + error.message();
       console.log(error);
     }
   }
