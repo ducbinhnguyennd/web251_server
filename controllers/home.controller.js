@@ -34,7 +34,7 @@ exports.add = async (req, res, next) => {
     let objSP = new myMD.spModel();
 
     try {
-      fs.renameSync(req.file.path, "./public/uploads/" + req.file.originalname);
+      fs.renameSync(req.file.path, "../public/uploads/" + req.file.originalname);
       msg = "Url ảnh:  http://localhost:3000/uploads/" + req.file.originalname;
       objSP.img = "/uploads/" + req.file.originalname;
     } catch (error) {
@@ -139,7 +139,7 @@ exports.edit = async (req, res, next) => {
       if (req.file) {
         fs.renameSync(
           req.file.path,
-          "./public/uploads/" + req.file.originalname
+          "../public/uploads/" + req.file.originalname
         );
         msg = "Url ảnh: http://localhost:3000/uploads/" + req.file.originalname;
         objSP.img = "/uploads/" + req.file.originalname;
