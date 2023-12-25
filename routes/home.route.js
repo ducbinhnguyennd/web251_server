@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const homeController = require('../controllers/home.controller');
 const multer = require('multer');
-const { route, render } = require('../app');
+const { route, render } = require('..');
 const uploader = multer({ dest: './tmp' });
 
 
