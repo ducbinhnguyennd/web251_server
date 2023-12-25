@@ -3,7 +3,10 @@ const router = express.Router();
 const homeController = require('../controllers/home.controller');
 const multer = require('multer');
 const { route, render } = require('..');
-const uploader = multer();
+const storage = multer.memoryStorage();
+const uploader = multer({ storage: storage });
+
+
 
 
 router.get('/home', homeController.home);   
@@ -13,11 +16,11 @@ router.get('/search', homeController.searchByName);
 
 
 router.get('/add', homeController.add);
-router.post('/add', uploader.single('file_anh'), homeController.add);
+router.post('/add', uploader.single('image'), homeController.add);
 router.post('/add2', homeController.addJson);
 
 router.get('/home/edit/:idsp', homeController.edit);
-router.post('/home/edit/:idsp', uploader.single('file_anh'), homeController.edit);
+router.post('/home/edit/:idsp', uploader.single('image'), homeController.edit);
 router.put('/home/edit2/:idsp', homeController.editJson);
 
 

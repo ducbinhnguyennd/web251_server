@@ -1,6 +1,6 @@
 
 var myMD = require("../models/sanpham.model");
-var fs = require("fs");
+
 
 exports.home = async (req, res, next) => {
   let list_TL = await myMD.spModel.find();
@@ -34,9 +34,7 @@ exports.add = async (req, res, next) => {
     let objSP = new myMD.spModel();
 
     try {
-      fs.renameSync(req.file.path, "../public/uploads/" + req.file.originalname);
-      msg = "Url ảnh:  http://localhost:3000/uploads/" + req.file.originalname;
-      objSP.img = "/uploads/" + req.file.originalname;
+      objSP.img = req.file.buffer.toString('base64');
     } catch (error) {
       msg = error.message;
     }
@@ -137,12 +135,7 @@ exports.edit = async (req, res, next) => {
   if (req.method === "POST") {
     try {
       if (req.file) {
-        fs.renameSync(
-          req.file.path,
-          "../public/uploads/" + req.file.originalname
-        );
-        msg = "Url ảnh: http://localhost:3000/uploads/" + req.file.originalname;
-        objSP.img = "/uploads/" + req.file.originalname;
+        objSP.img = req.file.buffer.toString('base64');
         console.log(msg);
       }
     } catch (error) {
