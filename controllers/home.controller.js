@@ -70,6 +70,7 @@ exports.add = async (req, res, next) => {
       let new_sp = await objSP.save();
       console.log(new_sp);
       msg = "Lưu thành công";
+      res.render("home/home.js",{msg: msg});
     } catch (error) {
       msg = "Error" + error.message();
       console.log(error);
@@ -77,7 +78,7 @@ exports.add = async (req, res, next) => {
   }
   
 
-  res.render("home", { msg: msg });
+  res.render("home/add.ejs", { msg: msg });
 };  
 
 
