@@ -77,7 +77,7 @@ exports.add = async (req, res, next) => {
   }
   
 
-  res.render("home/add.ejs", { msg: msg });
+  res.render("home", { msg: msg });
 };  
 
 
