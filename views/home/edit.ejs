@@ -1,0 +1,27 @@
+<%- include('../include/header.ejs') %>
+
+<div class="container">
+    <h3><a href="/home/home"><img style="width: 30px;" src="https://cdn-icons-png.flaticon.com/512/25/25694.png"></a> Cập nhật sản phẩm</h3>
+    
+    <form action="" method="post" enctype="multipart/form-data">
+        <form class="px-4 py-3" >
+             
+            <div class="mb-3">
+                <label for="formFileMultiple" class="form-label">Ảnh sản phẩm</label>
+                <input class="form-control" type="file" name="file_anh" id="formFileMultiple" multiple>
+            </div>
+            
+            <label class="form-label">Tên sản phẩm</label>
+                <input type="text" name="name"  class="form-control" value="<%=objSP.name %>"><br>
+
+            <label class="form-label">Giá</label>
+                <input type="text" name="price" class="form-control" value="<%=objSP.price %>"><br>
+
+            <label class="form-label">Chi tiết sản phẩm</label>
+                <input type="text" name="noidung" class="form-control" value="<%=objSP.noidung %>"><br>
+
+            <button type="submit" class="btn btn-danger" >Cập nhật</button>
+            <%= msg %>
+        </form>
+    </form>
+</div>

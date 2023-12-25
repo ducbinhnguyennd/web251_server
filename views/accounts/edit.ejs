@@ -1,0 +1,20 @@
+<%- include('../include/header.ejs') %>
+
+<div class="container">
+    <h3><a href="/accounts/list"><img style="width: 30px;" src="https://cdn-icons-png.flaticon.com/512/25/25694.png"></a> Danh sách tài khoản</h3>
+    <form action="" method="post">
+        <form class="px-4 py-3">
+            <label class="form-label">Tên khách hàng</label>
+                <input type="text" class="form-control" name="ten" value="<%=objUser.ten %>"><br>
+
+            <label class="form-label">Email người dùng</label>
+                <input type="email" class="form-control" name="email" value="<%=objUser.email %>"><br>
+
+            <label class="form-label">Số điện thoại</label>
+                <input type="text" class="form-control" name="sdt" value="<%=objUser.sdt %>"><br>
+                
+            <button type="submit"  class="btn btn-primary">Lưu</button><%= msg%>
+        </form>
+    </form>
+</div>
+<%- include('../include/footer.ejs') %>

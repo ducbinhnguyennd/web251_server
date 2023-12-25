@@ -1,0 +1,76 @@
+<%- include('../include/header.ejs') %>
+    <div class="container">
+        <h2><a href="/home/home"><img style="width: 35px;"
+                    src="https://cdn-icons-png.flaticon.com/512/25/25694.png"></a> Thêm sản phẩm</h2>
+
+        <form action="" method="post" enctype="multipart/form-data">
+            <form class="px-4 py-3">
+
+                <br>
+                <div class="mb-3">
+                    <label for="formFileMultiple" class="form-label">Ảnh sản phẩm</label>
+                    <input class="form-control" type="file" name="file_anh" id="formFileMultiple" multiple>
+                </div>
+                <label class="form-label">Tên sản phẩm</label>
+                <input type="text" name="name" class="form-control"><br>
+                <label class="form-label">Giá sản phẩm</label>
+                <input type="number" name="price" class="form-control"><br>
+                <label class="form-label">Chi tiết sản phẩm</label>
+                <input type="text" name="noidung" class="form-control"><br>
+                <label class="form-label">Kích thước màn hình</label>
+                <input type="text" name="kichthuocmanhinh" class="form-control"><br>
+                <label class="form-label">Công nghệ màn hình</label>
+                <input type="text" name="congnghemanhinh" class="form-control"><br>
+                <label class="form-label">Camera sau</label>
+                <input type="text" name="camerasau" class="form-control"><br>
+                <label class="form-label">Camera trước</label>
+                <input type="text" name="cameratruoc" class="form-control"><br>
+                <label class="form-label">Chip</label>
+                <input type="text" name="chip" class="form-control"><br>
+                <label class="form-label">Bộ nhớ</label>
+                <input type="text" name="bonho" class="form-control"><br>
+                <label class="form-label">Pin</label>
+                <input type="text" name="pin" class="form-control"><br>
+                <label class="form-label">Hệ điều hành</label>
+                <input type="text" name="hedieuhanh" class="form-control"><br>
+                <label class="form-label">Độ phân giải</label>
+                <input type="text" name="dophangiai" class="form-control"><br>
+                <label class="form-label">Tính năng màn hình</label>
+                <input type="text" name="tinhnangmanhinh" class="form-control"><br>
+               
+                <label class="form-label">GPU</label>
+                <input type="text" name="GPU" class="form-control"><br>
+
+                <label class="form-label">Quay video</label>
+                <input type="text" name="quayvideo" class="form-control"><br>
+
+                <label class="form-label">Tính năng Camera</label>
+                <input type="text" name="tinhnangcamera" class="form-control"><br>
+
+                <label class="form-label">Kích thước</label>
+                <input type="text" name="kichthuoc" class="form-control"><br>
+
+                <label class="form-label">Trọng lượng</label>
+                <input type="text" name="trongluong" class="form-control"><br>
+
+                <label class="form-label">Công nghệ sạc</label>
+                <input type="text" name="congnghesac" class="form-control"><br>
+
+                <label class="form-label">Cổng sạc</label>
+                <input type="text" name="congsac" class="form-control"><br>
+
+                <label class="form-label">Kiểu màn hình</label>
+                <input type="text" name="kieumanhinh" class="form-control"><br>
+
+                <label class="form-label">Tính năng đặc biệt</label>
+                <input type="text" name="tinhnagdacbiet" class="form-control"><br>
+
+                <label class="form-label">Loại</label>
+                <input type="text" name="loai" class="form-control"><br>
+                
+                <button class="btn btn-danger" type="submit">Lưu</button>
+                <%= msg%>
+            </form>
+        </form>
+
+    </div>
