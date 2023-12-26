@@ -4,8 +4,8 @@ var settingsController = require('../controllers/user/settings.controller');
 
 
 
-router.get('/', settingsController.register);
-router.post('/', settingsController.register);
+router.get('/register', settingsController.register);
+router.post('/register', settingsController.register);
 
 router.get('/login', settingsController.login);
 router.post('/login', settingsController.login);
