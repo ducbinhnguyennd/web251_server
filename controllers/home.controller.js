@@ -1,5 +1,6 @@
 
 var myMD = require("../models/sanpham.model");
+var sharp = require('sharp');
 
 
 exports.home = async (req, res, next) => {
@@ -16,14 +17,14 @@ exports.shop = async (req, res, next) => {
 };
 exports.searchByName = async (req, res, next) => {
   const searchQuery = req.query.search;
-  const regex = new RegExp(searchQuery, 'i'); 
+  const regex = new RegExp(searchQuery, 'i');
 
   try {
     const searchResults = await myMD.spModel.find({ name: regex });
     res.render('home/home.ejs', { listSP: searchResults });
   } catch (error) {
     console.error(error);
-    res.render('home/home.ejs', { listSP: [] }); 
+    res.render('home/home.ejs', { listSP: [] });
   }
 };
 
@@ -34,11 +35,17 @@ exports.add = async (req, res, next) => {
     let objSP = new myMD.spModel();
 
     try {
-      objSP.img = req.file.buffer.toString('base64');
+      // Giảm dung lượng của ảnh trước khi lưu vào CSDL
+      const resizedBuffer = await sharp(req.file.buffer)
+        .resize({ width: 500 }) // Điều chỉnh kích thước theo nhu cầu
+        .jpeg({ quality: 80 })  // Điều chỉnh chất lượng JPEG
+        .toBuffer();
+
+      objSP.img = resizedBuffer.toString('base64');
     } catch (error) {
       msg = error.message;
     }
-    
+
     objSP.name = req.body.name;
     objSP.noidung = req.body.noidung;
     objSP.price = req.body.price;
@@ -73,10 +80,10 @@ exports.add = async (req, res, next) => {
       console.log(error);
     }
   }
-  
+
 
   res.render("home/add.ejs", { msg: msg });
-};  
+};
 
 
 //////////
@@ -87,8 +94,8 @@ exports.addJson = async (req, res, next) => {
   let objSP = new myMD.spModel();
 
   if (req.method == "POST") {
-    
-    objSP.img = req.body.img; 
+
+    objSP.img = req.body.img;
     objSP.name = req.body.name;
     objSP.noidung = req.body.noidung;
     objSP.price = req.body.price;
@@ -113,14 +120,14 @@ exports.addJson = async (req, res, next) => {
     objSP.tinhnagdacbiet = req.body.tinhnagdacbiet;
     objSP.loai = req.body.loai;
 
-      try {
-          let new_sp = await objSP.save();
-          console.log(new_sp);
-          msg = "Lưu thành công";
-      } catch (error) {
-          msg = "Error" + error.message();
-          console.log(error);
-      }
+    try {
+      let new_sp = await objSP.save();
+      console.log(new_sp);
+      msg = "Lưu thành công";
+    } catch (error) {
+      msg = "Error" + error.message();
+      console.log(error);
+    }
   }
   res.send({ message: msg });
 };
@@ -135,7 +142,13 @@ exports.edit = async (req, res, next) => {
   if (req.method === "POST") {
     try {
       if (req.file) {
-        objSP.img = req.file.buffer.toString('base64');
+        // Giảm dung lượng của ảnh trước khi lưu vào CSDL
+        const resizedBuffer = await sharp(req.file.buffer)
+          .resize({ width: 500 }) // Điều chỉnh kích thước theo nhu cầu
+          .jpeg({ quality: 80 })  // Điều chỉnh chất lượng JPEG
+          .toBuffer();
+
+        objSP.img = resizedBuffer.toString('base64');
         console.log(msg);
       }
     } catch (error) {
@@ -186,8 +199,8 @@ exports.editJson = async (req, res, next) => {
   let objSP = await myMD.spModel.findById(idsp);
 
   if (req.method == "PUT") {
-    
-    objSP.img = req.body.img; 
+
+    objSP.img = req.body.img;
     objSP.name = req.body.name;
     objSP.noidung = req.body.noidung;
     objSP.price = req.body.price;
@@ -212,14 +225,14 @@ exports.editJson = async (req, res, next) => {
     objSP.tinhnagdacbiet = req.body.tinhnagdacbiet;
     objSP.loai = req.body.loai;
 
-      try {
-          let new_sp = await objSP.save();
-          console.log(new_sp);
-          msg = "Sửa thành công";
-      } catch (error) {
-          msg = "Error" + error.message();
-          console.log(error);
-      }
+    try {
+      let new_sp = await objSP.save();
+      console.log(new_sp);
+      msg = "Sửa thành công";
+    } catch (error) {
+      msg = "Error" + error.message();
+      console.log(error);
+    }
   }
 
   res.send({ message: msg });
@@ -229,17 +242,17 @@ exports.deleteSP = async (req, res, next) => {
   let idsp = req.params.idsp;
   try {
     await myMD.spModel.findByIdAndDelete({ _id: idsp });
-  } catch (error) {}
+  } catch (error) { }
   res.redirect("/home/home");
 };
 
 
 exports.deleteJson = async (req, res, next) => {
   let idsp = req.params.idsp;
-  if(req.method === "DELETE"){
+  if (req.method === "DELETE") {
     try {
       await myMD.spModel.findByIdAndDelete({ _id: idsp });
-    } catch (error) {}
+    } catch (error) { }
   }
   res.send({ message: 'Xóa thành công' });
 };
@@ -247,6 +260,6 @@ exports.chitiet = async (req, res, next) => {
   let idsp = req.params.idsp;
   let objSP = await myMD.spModel.findById(idsp);
   let listSP = await myMD.spModel.find();
-  res.render("home/single-product.ejs", { objSP: objSP, listSP: listSP});
+  res.render("home/single-product.ejs", { objSP: objSP, listSP: listSP });
 };
- 
+
