@@ -1,5 +1,10 @@
 
 var myMD = require("../models/sanpham.model");
+const fs = require('fs');
+const { promisify } = require('util');
+const readFileAsync = promisify(fs.readFile);
+const writeFileAsync = promisify(fs.writeFile);
+
 
 
 
@@ -35,7 +40,14 @@ exports.add = async (req, res, next) => {
     let objSP = new myMD.spModel();
 
     try {
-      objSP.img = req.file.buffer.toString('base64');
+      // Đọc buffer của ảnh từ req.file
+      const imageBuffer = await readFileAsync(req.file.path);
+
+      // Thực hiện điều chỉnh kích thước (ví dụ: giảm kích thước xuống 800x600)
+      const resizedBuffer = await resizeImage(imageBuffer, 800, 600);
+
+      // Chuyển đổi buffer thành base64
+      objSP.img = resizedBuffer.toString('base64');
     } catch (error) {
       msg = error.message;
     }
