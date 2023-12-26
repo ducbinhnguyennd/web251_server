@@ -1,6 +1,6 @@
 
 var myMD = require("../models/sanpham.model");
-var sharp = require('sharp');
+const sharp = require('sharp');
 
 
 exports.home = async (req, res, next) => {
