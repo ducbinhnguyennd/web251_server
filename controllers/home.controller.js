@@ -1,27 +1,41 @@
 
 var myMD = require("../models/sanpham.model");
-const fs = require('fs');
-const { promisify } = require('util');
-const readFileAsync = promisify(fs.readFile);
-const writeFileAsync = promisify(fs.writeFile);
 
 
-// Hàm điều chỉnh kích thước ảnh
+
+
 async function resizeImage(buffer, width, height) {
-  // Đọc buffer vào một ReadableStream
-  const readableStream = require('stream').Readable.from(buffer);
+  const originalSize = Math.ceil(Math.sqrt(buffer.length / 4));
+  const newSize = Math.ceil(width * height);
 
-  // Ghi dữ liệu từ ReadableStream vào một WritableStream với kích thước đã chỉ định
-  const writableStream = require('stream').Writable.from(new Array(width * height).fill(0));
+  if (newSize >= originalSize) {
+    // Không giảm kích thước nếu kích thước mới lớn hơn hoặc bằng kích thước gốc
+    return buffer;
+  }
 
-  await new Promise((resolve, reject) => {
-    readableStream.pipe(writableStream)
-      .on('finish', resolve)
-      .on('error', reject);
-  });
+  const pixelRatio = originalSize / newSize;
+  const step = Math.floor(Math.sqrt(pixelRatio));
+  const newBuffer = Buffer.alloc(newSize * 4);
+  
+  for (let i = 0; i < newSize; i++) {
+    const srcIdx = i * step * 4;
+    const destIdx = i * 4;
 
-  // Trả về buffer của WritableStream
-  return Buffer.from(writableStream.getBuffer());
+    if (srcIdx < buffer.length) {
+      newBuffer[destIdx] = buffer[srcIdx];
+      newBuffer[destIdx + 1] = buffer[srcIdx + 1];
+      newBuffer[destIdx + 2] = buffer[srcIdx + 2];
+      newBuffer[destIdx + 3] = buffer[srcIdx + 3];
+    } else {
+      // Nếu vượt qua kích thước gốc, điền các giá trị mặc định
+      newBuffer[destIdx] = 0;
+      newBuffer[destIdx + 1] = 0;
+      newBuffer[destIdx + 2] = 0;
+      newBuffer[destIdx + 3] = 255; // Alpha channel
+    }
+  }
+
+  return newBuffer;
 }
 
 
@@ -59,7 +73,7 @@ exports.add = async (req, res, next) => {
 
     try {
       // Đọc buffer của ảnh từ req.file
-      const imageBuffer = await readFileAsync(req.file.buffer);
+      const imageBuffer = req.file.buffer;
 
       // Thực hiện điều chỉnh kích thước (ví dụ: giảm kích thước xuống 800x600)
       const resizedBuffer = await resizeImage(imageBuffer, 800, 600);
@@ -68,14 +82,6 @@ exports.add = async (req, res, next) => {
       objSP.img = resizedBuffer.toString('base64');
     } catch (error) {
       msg = error.message;
-    }finally {
-      // Xóa file tạm thời sau khi sử dụng
-      try {
-        fs.unlinkSync(req.file.path);
-      } catch (unlinkError) {
-        // Xử lý lỗi khi xóa file
-        console.error("Error deleting file:", unlinkError);
-      }
     }
     
     objSP.name = req.body.name;
