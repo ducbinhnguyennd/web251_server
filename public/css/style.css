@@ -77,8 +77,12 @@ body {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.6;
-  margin: 0;
+  margin: 0; /* Xóa margin mặc định của body */
+  padding: 0; /* Xóa padding mặc định của body */
+  height: 100vh; 
+  background: url('https://hinhanhdephd.com/wp-content/uploads/2019/12/background-tet-dep-nhat-lam-hinh-nen-dep-32.png') center/cover no-repeat; /* Đặt nền của body */
 }
+
 p {
   font-size: 1.2em;
   color: var(--gray-color-500);
