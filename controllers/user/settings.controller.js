@@ -51,7 +51,7 @@ exports.login = async (req, res, next) => {
                         // đúng pass = login
                         req.session.userLogin = objU;
                         // chuyển trang về màn hình chính hoạc danh sách
-                        return res.redirect('/home/main');
+                        return res.redirect('/main');
                     }else{
                         msg = 'sai password';
                     }
