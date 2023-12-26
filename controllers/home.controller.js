@@ -276,7 +276,7 @@ exports.deleteSP = async (req, res, next) => {
   try {
     await myMD.spModel.findByIdAndDelete({ _id: idsp });
   } catch (error) {}
-  res.redirect("/home/home");
+  res.redirect("/");
 };
 
 
