@@ -6,7 +6,23 @@ const readFileAsync = promisify(fs.readFile);
 const writeFileAsync = promisify(fs.writeFile);
 
 
+// Hàm điều chỉnh kích thước ảnh
+async function resizeImage(buffer, width, height) {
+  // Đọc buffer vào một ReadableStream
+  const readableStream = require('stream').Readable.from(buffer);
 
+  // Ghi dữ liệu từ ReadableStream vào một WritableStream với kích thước đã chỉ định
+  const writableStream = require('stream').Writable.from(new Array(width * height).fill(0));
+
+  await new Promise((resolve, reject) => {
+    readableStream.pipe(writableStream)
+      .on('finish', resolve)
+      .on('error', reject);
+  });
+
+  // Trả về buffer của WritableStream
+  return Buffer.from(writableStream.getBuffer());
+}
 
 exports.home = async (req, res, next) => {
   let list_TL = await myMD.spModel.find();
@@ -50,6 +66,9 @@ exports.add = async (req, res, next) => {
       objSP.img = resizedBuffer.toString('base64');
     } catch (error) {
       msg = error.message;
+    }finally {
+      // Xóa file tạm thời sau khi sử dụng
+      fs.unlinkSync(req.file.path);
     }
     
     objSP.name = req.body.name;
@@ -86,6 +105,7 @@ exports.add = async (req, res, next) => {
       console.log(error);
     }
   }
+
   
 
   res.render("home/add.ejs", { msg: msg });
