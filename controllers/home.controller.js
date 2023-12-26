@@ -68,7 +68,12 @@ exports.add = async (req, res, next) => {
       msg = error.message;
     }finally {
       // Xóa file tạm thời sau khi sử dụng
-      fs.unlinkSync(req.file.path);
+      try {
+        fs.unlinkSync(req.file.path);
+      } catch (unlinkError) {
+        // Xử lý lỗi khi xóa file
+        console.error("Error deleting file:", unlinkError);
+      }
     }
     
     objSP.name = req.body.name;
