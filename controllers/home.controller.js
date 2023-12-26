@@ -24,6 +24,7 @@ async function resizeImage(buffer, width, height) {
   return Buffer.from(writableStream.getBuffer());
 }
 
+
 exports.home = async (req, res, next) => {
   let list_TL = await myMD.spModel.find();
   res.render("home/index.ejs", { listSP: list_TL });
@@ -49,6 +50,7 @@ exports.searchByName = async (req, res, next) => {
   }
 };
 
+
 exports.add = async (req, res, next) => {
   let msg = "";
   console.log(req.body);
@@ -57,7 +59,7 @@ exports.add = async (req, res, next) => {
 
     try {
       // Đọc buffer của ảnh từ req.file
-      const imageBuffer = await readFileAsync(req.file.path);
+      const imageBuffer = await readFileAsync(req.file.buffer);
 
       // Thực hiện điều chỉnh kích thước (ví dụ: giảm kích thước xuống 800x600)
       const resizedBuffer = await resizeImage(imageBuffer, 800, 600);
