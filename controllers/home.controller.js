@@ -216,8 +216,8 @@ exports.edit = async (req, res, next) => {
     try {
       await objSP.save();
       msg = "Cập nhật thành công";
+      res.send({ message: msg });
     } catch (error) {
-      msg = "Error: " + error.message;
       console.log(error);
     }
   }
