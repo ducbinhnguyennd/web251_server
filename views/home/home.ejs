@@ -51,7 +51,7 @@
                         </td>
 
                         <td>
-                            <a href="/home/chitiet/<%= row._id %>">
+                            <a href="/chitiet/<%= row._id %>">
                                 <%= row.name %>
                             </a>
                         </td>
@@ -62,7 +62,7 @@
                             <%= row.noidung %>
                         </td>
 
-                        <td> <a href="home/edit/<%= row._id %>">
+                        <td> <a href="/edit/<%= row._id %>">
                                 <button type="button" class="btn btn-light">Sửa</button>
                             </a>
                             <butaton type="button" class="btn btn-light" data-bs-toggle="modal"
@@ -83,7 +83,7 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Không</button>
-                                                <a href="home/deleteSP/<%= row._id%>"><button type="button"
+                                                <a href="/deleteSP/<%= row._id%>"><button type="button"
                                                         class="btn btn-primary" data-bs-dismiss="modal">Có</button></a>
                                             </div>
                                         </div>
