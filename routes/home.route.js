@@ -29,6 +29,10 @@ router.post('/home/deleteSP/:idsp', homeController.deleteSP);
 router.delete('/home/delete2/:idsp', homeController.deleteJson);
 
 router.get('/shop/', homeController.shop);
+router.get('/contact/', homeController.contact);
+router.get('/thanhtoan/', homeController.thanhtoan);
+
+
 
 router.get('/chitiet/:idsp', homeController.chitiet);
 router.post('/chitiet/:idsp', homeController.chitiet);

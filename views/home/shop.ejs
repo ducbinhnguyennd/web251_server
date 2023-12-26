@@ -17,11 +17,88 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- link icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+      /* Thiết lập kiểu cho nút */
+      /* Thiết lập kiểu cho nút */
+      .message-button {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: fixed;
+        bottom: 70px;
+        right: 70px;
+      }
+  
+      /* Thiết lập hiệu ứng lắc lắc rung rung */
+      .message-button:hover {
+        animation: shake 0.5s;
+      }
+  
+      @keyframes shake {
+        0% {
+          transform: translate(0, 0);
+        }
+  
+        10% {
+          transform: translate(-5px, 0);
+        }
+  
+        20% {
+          transform: translate(5px, 0);
+        }
+  
+        30% {
+          transform: translate(-5px, 0);
+        }
+  
+        40% {
+          transform: translate(5px, 0);
+        }
+  
+        50% {
+          transform: translate(-5px, 0);
+        }
+  
+        60% {
+          transform: translate(5px, 0);
+        }
+  
+        70% {
+          transform: translate(-5px, 0);
+        }
+  
+        80% {
+          transform: translate(5px, 0);
+        }
+  
+        90% {
+          transform: translate(-5px, 0);
+        }
+  
+        100% {
+          transform: translate(0, 0);
+        }
+  
+      }
+    </style>
     <!-- script
     ================================================== -->
     <script src="js/modernizr.js"></script>
   </head>
   <body>
+    <button id="fanpageButton" class="message-button">
+      <i class="fab fa-facebook-messenger"></i>
+    </button>
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       <symbol id="search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
         <path fill="currentColor" d="M19 3C13.488 3 9 7.488 9 13c0 2.395.84 4.59 2.25 6.313L3.281 27.28l1.439 1.44l7.968-7.969A9.922 9.922 0 0 0 19 23c5.512 0 10-4.488 10-10S24.512 3 19 3zm0 2c4.43 0 8 3.57 8 8s-3.57 8-8 8s-8-3.57-8-8s3.57-8 8-8z" />
@@ -109,7 +186,7 @@
           </button>
           <div class="offcanvas offcanvas-end" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel">
             <div class="offcanvas-header px-4 pb-0">
-              <a class="navbar-brand" href="/home/home">
+              <a class="navbar-brand" href="/">
                 <img src="/images/main-logo.png" class="logo">
               </a>
               <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdNavbar"></button>
@@ -144,15 +221,7 @@
                       <li>
                         <a href="cart.html" class="dropdown-item">Cart</a>
                       </li>
-                      <li>
-                        <a href="checkout.html" class="dropdown-item">Checkout</a>
-                      </li>
-                      <li>
-                        <a href="single-post.html" class="dropdown-item">Single Post</a>
-                      </li>
-                      <li>
-                        <a href="single-product.html" class="dropdown-item">Single Product</a>
-                      </li>
+                    
                       <li>
                         <a href="contact.html" class="dropdown-item">Liên hệ</a>
                       </li>
@@ -169,14 +238,14 @@
                           </a>
                         </li>
                         <li class="pe-3">
-                          <a href="#">
+                          <a href="/login">
                             <svg class="user">
                               <use xlink:href="#user"></use>
                             </svg>
                           </a>
                         </li>
                         <li>
-                          <a href="cart.html">
+                          <a href="/thanhtoan">
                             <svg class="cart">
                               <use xlink:href="#cart"></use>
                             </svg>
@@ -200,7 +269,7 @@
               <h1 class="display-2 text-uppercase text-dark">Shop</h1>
               <div class="breadcrumbs">
                 <span class="item">
-                  <a href="/home/home">Trang Chủ ></a>
+                  <a href="/">Trang Chủ ></a>
                 </span>
                 <span class="item">Shop</span>
               </div>
@@ -548,7 +617,7 @@
                     <h5 class="widget-title text-uppercase pb-2">Liên hệ chúng tôi</h5>
                     <p>Bạn có bất kỳ thắc mắc hoặc gợi ý nào không?<a href="mailto:">ducbinhnguyennd@gmail.com</a>
                     </p>
-                    <p>Nếu bạn cần hỗ trợ? Hãy gọi cho chúng tôi. <a href="">+0816 354 354</a>
+                    <p>Nếu bạn cần hỗ trợ? Hãy gọi cho chúng tôi. <a href="">+0812 251 251</a>
                     </p>
                   </div>
                 </div>
@@ -590,6 +659,16 @@
         </div>
       </div>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+         const fanpageButton = document.getElementById("fanpageButton");
+       
+         fanpageButton.addEventListener("click", function() {
+           // Thay thế "URL_FANPAGE_FACEBOOK_CUA_BAN" bằng đường dẫn fanpage của bạn
+           window.location.href = "https://www.messenger.com/t/105703318958498";
+         });
+       });
+   </script> 
     <script src="/js/jquery-1.11.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>

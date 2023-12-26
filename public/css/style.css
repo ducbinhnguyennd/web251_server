@@ -408,6 +408,34 @@ h3.cart-title {
   background: transparent;
   border: none;
 }
+/*
+icon messenger
+*/
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25%, 75% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+.message-button i {
+ 
+  font-size: 45px;
+}
+
+.message-button {
+  animation: shake 1s infinite; /* Áp dụng animation */
+  position: relative;
+  z-index: 2;
+}
+
+
+
 
 /** Search Popup
 --------------------------------------------------------------*/
@@ -661,19 +689,31 @@ h3.cart-title {
 #billboard .swiper-arrow.swiper-arrow-next {
     right: 0;
 }
+#billboard .swiper-arrow {
+  font-size: 10px; /* Kích thước mặc định cho nút chuyển */
+}
 
 @media only screen and (max-width: 767px) {
   #billboard .banner-content {
-      margin-top: 210px;
+    margin-top: 210px;
   }
+
   #billboard .image-holder {
-      margin-top: -390px;
-      opacity: 0.3;
+    margin-top: -390px;
+    opacity: 0.5;
+    height: 200px;
   }
+
   #billboard .swiper-arrow {
-      top: 400px;
+    top: 400px;
+  }
+
+  #billboard .btn {
+    font-size: 14px; /* Kích thước nút mua sắm khi màn hình nhỏ */
+    padding: 8px 16px; /* Điều chỉnh kích thước padding cho nút */
   }
 }
+
 
 /* 3. Icon Box - Company Services
 /*----------------------------------------------*/

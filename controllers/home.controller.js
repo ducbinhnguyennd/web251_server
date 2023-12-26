@@ -51,6 +51,14 @@ exports.shop = async (req, res, next) => {
   let list_TL = await myMD.spModel.find();
   res.render("home/shop.ejs", { listSP: list_TL });
 };
+exports.contact = async (req, res, next) => {
+  let list_TL = await myMD.spModel.find();
+  res.render("home/contact.ejs", { listSP: list_TL });
+};
+exports.thanhtoan = async (req, res, next) => {
+  let list_TL = await myMD.spModel.find();
+  res.render("home/thanhtoan.ejs", { listSP: list_TL });
+};
 exports.searchByName = async (req, res, next) => {
   const searchQuery = req.query.search;
   const regex = new RegExp(searchQuery, 'i'); 
