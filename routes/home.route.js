@@ -10,7 +10,7 @@ const uploader = multer({ storage: storage });
 
 
 router.get('/', homeController.home);   
-router.post('/home', homeController.home);
+router.post('/', homeController.home);
 
 router.get('/search', homeController.searchByName);
 
