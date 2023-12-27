@@ -76,7 +76,7 @@
     margin-top: 0.5%;
     margin-bottom: 1%;
     margin-left: 1%;
-      margin-right: 1%;
+    margin-right: 1%;
 
   }
 
@@ -110,9 +110,55 @@
       bottom: 0;
       position: relative;
     }
-}
+    @keyframes shake {
+      0% {
+        transform: translate(0, 0);
+      }
 
-    .message-button {
+      10% {
+        transform: translate(-5px, 0);
+      }
+
+      20% {
+        transform: translate(5px, 0);
+      }
+
+      30% {
+        transform: translate(-5px, 0);
+      }
+
+      40% {
+        transform: translate(5px, 0);
+      }
+
+      50% {
+        transform: translate(-5px, 0);
+      }
+
+      60% {
+        transform: translate(5px, 0);
+      }
+
+      70% {
+        transform: translate(-5px, 0);
+      }
+
+      80% {
+        transform: translate(5px, 0);
+      }
+
+      90% {
+        transform: translate(-5px, 0);
+      }
+
+      100% {
+        transform: translate(0, 0);
+      }
+
+    }
+}
+@media only screen and (min-width: 361px) {
+  .message-button {
       background-color: #3498db;
       color: white;
       border: none;
@@ -295,6 +341,9 @@
       }
 
     }
+}
+
+    
   </style>
 
 
