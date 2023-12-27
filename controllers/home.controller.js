@@ -121,7 +121,7 @@ exports.add = async (req, res, next) => {
       let new_sp = await objSP.save();
       console.log(new_sp);
       msg = "Lưu thành công";
-      res.send({ message: msg });
+       res.render('home/home.js',{msg:msg});
     } catch (error) {
       console.log(error);
     }
@@ -224,7 +224,7 @@ exports.edit = async (req, res, next) => {
     try {
       await objSP.save();
       msg = "Cập nhật thành công";
-      res.send({ message: msg });
+       res.render('home/home.js',{msg:msg});
     } catch (error) {
       console.log(error);
     }
@@ -284,7 +284,7 @@ exports.deleteSP = async (req, res, next) => {
   try {
     await myMD.spModel.findByIdAndDelete(idsp);
   } catch (error) {}
-  res.redirect("/");
+   res.render('home/home.js',{msg:msg});
 };
 
 
