@@ -65,12 +65,26 @@
                         <td> <a href="/home/edit/<%= row._id %>">
                                 <button type="button" class="btn btn-light">Sửa</button>
                             </a>
-                            <form onclick="return confirm('Bạn có muốn xóa sản phẩm này?')" method="post"  action="/home/deleteSP/<%= row._id%>">
-                            <button type="button" class="btn btn-light" 
-                                data-bs-target="#staticBackdrop">
-                                xóa
-                                </button>
-                            </form>
+                           <form action="/home/deleteSP/<%= row._id %>" method="post" id="deleteForm">
+    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Xóa
+    </button>
+
+    <div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Chắc chắn muốn xóa?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
+                    <button type="submit" class="btn btn-primary">Có</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
 
                         </td>
 
