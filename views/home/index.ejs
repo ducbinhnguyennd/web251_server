@@ -25,332 +25,341 @@
   <style>
     @media only screen and (max-width: 391px) {
       .message-button {
-      background-color: #3498db;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 80px;
-      height: 80px;
-      font-size: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      position: fixed;
-      bottom: 70px;
-      right: 70px;
-    }
-
-    /* Thiết lập hiệu ứng lắc lắc rung rung */
-    .message-button:hover {
-      animation: shake 0.5s;
-    }
-  body {
-    font-family: var(--body-font);
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.6;
-    margin: 0;
-    background-color: aliceblue;
-    background-image: none;
-
-  }
-
-  .section {
-    padding: 1%;
-    width: 100%;
-    overflow: hidden;
-    background-color: rgb(251, 251, 252);
-    margin-top: 0.5%;
-    margin-left: 1%;
-    margin-right: 1%;
-  }
-
-
-  .sc {
-    background-color: rgb(251, 251, 252);
-    margin-bottom: 1%;
-    margin-left: 1%;
-    margin-right: 1%;
-
-  }
-  .sp {
-    margin-top: 1%;
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-bottom: 2%;
-  }
-  .list {
-      overflow-x: auto;
-      background-color: rgb(251, 251, 252);
-    }
-
-
-  #left,
-  #right {
-    display: none;
-  } 
-  #thich {
-      box-sizing: border-box;
-      margin-left: 20px;
-      /* Để tránh chồng lấn với hình ảnh bên trái */
-      margin-right: 20px;
-      /* Để tránh chồng lấn với hình ảnh bên phải */
-      z-index: 1;
-    }
-    #hi {
-      top: 5%;
-      bottom: 0;
-      position: relative;
-    }
-    #billboard {
-      display: none;
-    }
-    header{
-      top: 0;
-    }
-    .anh {
-      width: 270px;
-  height: 270px;
-}
-    @keyframes shake {
-      0% {
-        transform: translate(0, 0);
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: fixed;
+        bottom: 70px;
+        right: 70px;
       }
 
-      10% {
-        transform: translate(-5px, 0);
+      /* Thiết lập hiệu ứng lắc lắc rung rung */
+      .message-button:hover {
+        animation: shake 0.5s;
       }
 
-      20% {
-        transform: translate(5px, 0);
+      body {
+        font-family: var(--body-font);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.6;
+        margin: 0;
+        background-color: aliceblue;
+        background-image: none;
+
       }
 
-      30% {
-        transform: translate(-5px, 0);
+      .section {
+        padding: 1%;
+        width: 100%;
+        overflow: hidden;
+        background-color: rgb(251, 251, 252);
+        margin-top: 0.5%;
+        margin-left: 1%;
+        margin-right: 1%;
       }
 
-      40% {
-        transform: translate(5px, 0);
+
+      .sc {
+        background-color: rgb(251, 251, 252);
+        margin-bottom: 1%;
+        margin-left: 1%;
+        margin-right: 1%;
+
       }
 
-      50% {
-        transform: translate(-5px, 0);
+      .sp {
+        margin-top: 1%;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-bottom: 2%;
       }
 
-      60% {
-        transform: translate(5px, 0);
+      .list {
+        overflow-x: auto;
+        background-color: rgb(251, 251, 252);
       }
 
-      70% {
-        transform: translate(-5px, 0);
+
+      #left,
+      #right {
+        display: none;
       }
 
-      80% {
-        transform: translate(5px, 0);
+      #thich {
+        box-sizing: border-box;
+        margin-left: 20px;
+        /* Để tránh chồng lấn với hình ảnh bên trái */
+        margin-right: 20px;
+        /* Để tránh chồng lấn với hình ảnh bên phải */
+        z-index: 1;
       }
 
-      90% {
-        transform: translate(-5px, 0);
+      #hi {
+        top: 5%;
+        bottom: 0;
+        position: relative;
       }
 
-      100% {
-        transform: translate(0, 0);
+      #billboard {
+        display: none;
       }
 
-    }
-    
-}
-@media only screen and (min-width: 392px) {
-  .message-button {
-      background-color: #3498db;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 80px;
-      height: 80px;
-      font-size: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      position: fixed;
-      bottom: 70px;
-      right: 70px;
-    }
-
-    /* Thiết lập hiệu ứng lắc lắc rung rung */
-    .message-button:hover {
-      animation: shake 0.5s;
-    }
-   
-    body {
-
-      background-image: url('https://i.pinimg.com/236x/70/31/76/703176ce7d04c8d6f048a888ba4337b4.jpg');
-      /* Đường dẫn đến hình ảnh nền */
-      background-size: cover;
-      /* Hiển thị hình ảnh nền theo tỷ lệ khung hình của trình duyệt */
-      background-position: center;
-      /* Đặt hình ảnh nền ở giữa trang */
-      background-repeat: no-repeat;
-      /* Không lặp lại hình ảnh nền */
-
-    }
-
-    .section {
-      padding: 1%;
-      height: 23%;
-      overflow: hidden;
-      background-color: rgb(251, 251, 252);
-      margin-top: 0.5%;
-      margin-left: 10%;
-      margin-right: 10%;
-    }
-
-
-    .sc {
-      background-color: rgb(251, 251, 252);
-      margin-top: 0.5%;
-      margin-bottom: 1%;
-      margin-left: 10%;
-      margin-right: 10%;
-
-    }
-
-    .list {
-      overflow-x: auto;
-      /* Cho phép thanh cuộn ngang khi nội dung bên trong vượt ra khỏi kích thước của .section */
-      white-space: nowrap;
-      background-color: rgb(251, 251, 252);
-    }
-
-    .sp {
-      margin-top: 1%;
-      margin-left: 2%;
-      margin-right: 2%;
-      margin-bottom: 2%;
-    }
-
-    #header {
-      width: 100%;
-
-    }
-
-    #left,
-    #right {
-      width: 10%;
-      animation: tilt 2s ease-in-out infinite reverse;
-      position: absolute;
-      z-index: 2;
-      bottom: 0;
-      will-change: transform;
-    }
-
-    #left {
-      left: 0;
-    }
-
-    #right {
-      right: 0;
-    }
-
-    #thich {
-      box-sizing: border-box;
-      margin-left: 50px;
-      /* Để tránh chồng lấn với hình ảnh bên trái */
-      margin-right: 50px;
-      /* Để tránh chồng lấn với hình ảnh bên phải */
-      z-index: 1;
-    }
-
-    #hi {
-      bottom: 0;
-      position: relative;
-    }
-
-    #imagedoi {
-      position: absolute;
-      top: 14%;
-      left: 0;
-      right: 0;
-      z-index: 2;
-    }
-
-    #billboard {
-      height: 13%;
-      overflow: hidden;
-      position: relative;
-      z-index: 9;
-    }
-    .anh {
-      width: 270px;
-  height: 270px;
-}
-    
-
-    @keyframes tilt {
-      0% {
-        transform: rotate(-5deg);
+      header {
+        top: 0;
       }
 
-      50% {
-        transform: rotate(10deg);
+      .anh {
+        width: 270px;
+        height: 270px;
       }
 
-      100% {
-        transform: rotate(-5deg);
-      }
-    }
+      @keyframes shake {
+        0% {
+          transform: translate(0, 0);
+        }
 
-    @keyframes shake {
-      0% {
-        transform: translate(0, 0);
-      }
+        10% {
+          transform: translate(-5px, 0);
+        }
 
-      10% {
-        transform: translate(-5px, 0);
-      }
+        20% {
+          transform: translate(5px, 0);
+        }
 
-      20% {
-        transform: translate(5px, 0);
-      }
+        30% {
+          transform: translate(-5px, 0);
+        }
 
-      30% {
-        transform: translate(-5px, 0);
-      }
+        40% {
+          transform: translate(5px, 0);
+        }
 
-      40% {
-        transform: translate(5px, 0);
-      }
+        50% {
+          transform: translate(-5px, 0);
+        }
 
-      50% {
-        transform: translate(-5px, 0);
-      }
+        60% {
+          transform: translate(5px, 0);
+        }
 
-      60% {
-        transform: translate(5px, 0);
-      }
+        70% {
+          transform: translate(-5px, 0);
+        }
 
-      70% {
-        transform: translate(-5px, 0);
-      }
+        80% {
+          transform: translate(5px, 0);
+        }
 
-      80% {
-        transform: translate(5px, 0);
-      }
+        90% {
+          transform: translate(-5px, 0);
+        }
 
-      90% {
-        transform: translate(-5px, 0);
-      }
+        100% {
+          transform: translate(0, 0);
+        }
 
-      100% {
-        transform: translate(0, 0);
       }
 
     }
-}
 
-    
+    @media only screen and (min-width: 392px) {
+      .message-button {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: fixed;
+        bottom: 70px;
+        right: 70px;
+      }
+
+      /* Thiết lập hiệu ứng lắc lắc rung rung */
+      .message-button:hover {
+        animation: shake 0.5s;
+      }
+
+      body {
+
+        background-image: url('https://i.pinimg.com/236x/70/31/76/703176ce7d04c8d6f048a888ba4337b4.jpg');
+        /* Đường dẫn đến hình ảnh nền */
+        background-size: cover;
+        /* Hiển thị hình ảnh nền theo tỷ lệ khung hình của trình duyệt */
+        background-position: center;
+        /* Đặt hình ảnh nền ở giữa trang */
+        background-repeat: no-repeat;
+        /* Không lặp lại hình ảnh nền */
+
+      }
+
+      .section {
+        padding: 1%;
+        height: 23%;
+        overflow: hidden;
+        background-color: rgb(251, 251, 252);
+        margin-top: 0.5%;
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+
+
+      .sc {
+        background-color: rgb(251, 251, 252);
+        margin-top: 0.5%;
+        margin-bottom: 1%;
+        margin-left: 10%;
+        margin-right: 10%;
+
+      }
+
+      .list {
+        overflow-x: auto;
+        /* Cho phép thanh cuộn ngang khi nội dung bên trong vượt ra khỏi kích thước của .section */
+        white-space: nowrap;
+        background-color: rgb(251, 251, 252);
+      }
+
+      .sp {
+        margin-top: 1%;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-bottom: 2%;
+      }
+
+      #header {
+        width: 100%;
+
+      }
+
+      #left,
+      #right {
+        width: 10%;
+        animation: tilt 2s ease-in-out infinite reverse;
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        will-change: transform;
+      }
+
+      #left {
+        left: 0;
+      }
+
+      #right {
+        right: 0;
+      }
+
+      #thich {
+        box-sizing: border-box;
+        margin-left: 50px;
+        /* Để tránh chồng lấn với hình ảnh bên trái */
+        margin-right: 50px;
+        /* Để tránh chồng lấn với hình ảnh bên phải */
+        z-index: 1;
+      }
+
+      #hi {
+        bottom: 0;
+        position: relative;
+      }
+
+      #imagedoi {
+        position: absolute;
+        top: 14%;
+        left: 0;
+        right: 0;
+        z-index: 2;
+      }
+
+      #billboard {
+        height: 13%;
+        overflow: hidden;
+        position: relative;
+        z-index: 9;
+      }
+
+      .anh {
+        width: 270px;
+        height: 270px;
+      }
+
+
+      @keyframes tilt {
+        0% {
+          transform: rotate(-5deg);
+        }
+
+        50% {
+          transform: rotate(10deg);
+        }
+
+        100% {
+          transform: rotate(-5deg);
+        }
+      }
+
+      @keyframes shake {
+        0% {
+          transform: translate(0, 0);
+        }
+
+        10% {
+          transform: translate(-5px, 0);
+        }
+
+        20% {
+          transform: translate(5px, 0);
+        }
+
+        30% {
+          transform: translate(-5px, 0);
+        }
+
+        40% {
+          transform: translate(5px, 0);
+        }
+
+        50% {
+          transform: translate(-5px, 0);
+        }
+
+        60% {
+          transform: translate(5px, 0);
+        }
+
+        70% {
+          transform: translate(-5px, 0);
+        }
+
+        80% {
+          transform: translate(5px, 0);
+        }
+
+        90% {
+          transform: translate(-5px, 0);
+        }
+
+        100% {
+          transform: translate(0, 0);
+        }
+
+      }
+    }
   </style>
 
 
