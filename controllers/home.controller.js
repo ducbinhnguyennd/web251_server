@@ -282,7 +282,7 @@ exports.editJson = async (req, res, next) => {
 exports.deleteSP = async (req, res, next) => {
   let idsp = req.params.idsp;
   try {
-    await myMD.spModel.findByIdAndDelete({ _id: idsp });
+    await myMD.spModel.findByIdAndDelete(idsp);
   } catch (error) {}
   res.redirect("/");
 };
