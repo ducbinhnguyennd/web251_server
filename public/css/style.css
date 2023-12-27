@@ -1015,8 +1015,8 @@ figure.instagram-item img.insta-image {
   height: 40px;
 }
 .anhsp{
-  width: 100%;
-  height: 100%;
+  width: 280px;
+  height: 280px;
 }
 @media only screen and (max-width: 991px) {
   .product-info-tabs .tabs-listing button {

@@ -84,7 +84,7 @@ exports.add = async (req, res, next) => {
       const imageBuffer = req.file.buffer;
 
       // Thực hiện điều chỉnh kích thước (ví dụ: giảm kích thước xuống 800x600)
-      const resizedBuffer = await resizeImage(imageBuffer, 800, 600);
+      const resizedBuffer = await resizeImage(imageBuffer, 600, 400);
 
       // Chuyển đổi buffer thành base64
       objSP.img = resizedBuffer.toString('base64');
