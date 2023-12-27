@@ -83,8 +83,10 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Không</button>
-                                                <a href="/home/deleteSP/<%= row._id%>"><button type="button"
-                                                        class="btn btn-primary" data-bs-dismiss="modal">Có</button></a>
+                                                 <form action="/home/deleteSP/<%= row._id%>">
+                                                        <button type="submit"
+                                                        class="btn btn-primary" data-bs-dismiss="modal">Có</button>
+                                                    </form>
                                             </div>
                                         </div>
                                     </div>
