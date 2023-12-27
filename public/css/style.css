@@ -137,7 +137,6 @@ CSS STRUCTURE:
 
   #left,
   #right {
-    width: 10%;
     animation: tilt 2s ease-in-out infinite reverse;
     position: absolute;
     z-index: 2;
