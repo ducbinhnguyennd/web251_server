@@ -24,31 +24,27 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
     @media only screen and (max-width: 360px) {
-  .message-button i {
+      .message-button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: fixed;
+      bottom: 70px;
+      right: 70px;
+    }
 
-    font-size: 45px;
-  }
-  
-  .message-button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    position: fixed;
-    bottom: 70px;
-    right: 70px;
-    animation: shake 1s infinite;
-    /* Áp dụng animation */
-    position: relative;
-    z-index: 7;
-  }
+    /* Thiết lập hiệu ứng lắc lắc rung rung */
+    .message-button:hover {
+      animation: shake 0.5s;
+    }
   body {
     font-family: var(--body-font);
     font-size: 14px;
@@ -79,14 +75,6 @@
     margin-right: 1%;
 
   }
-
-  .list {
-    overflow-x: auto;
-    /* Cho phép thanh cuộn ngang khi nội dung bên trong vượt ra khỏi kích thước của .section */
-    white-space: nowrap;
-    background-color: rgb(251, 251, 252);
-  }
-
   .sp {
     margin-top: 1%;
     margin-left: 2%;
