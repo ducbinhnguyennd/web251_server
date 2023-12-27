@@ -53,6 +53,31 @@ CSS STRUCTURE:
 }
 
 @media only screen and (max-width: 768px) {
+  .message-button i {
+
+    font-size: 45px;
+  }
+  
+  .message-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: fixed;
+    bottom: 70px;
+    right: 70px;
+    animation: shake 1s infinite;
+    /* Áp dụng animation */
+    position: relative;
+    z-index: 7;
+  }
   body {
     font-family: var(--body-font);
     font-size: 14px;
@@ -606,7 +631,7 @@ icon messenger
   animation: shake 1s infinite;
   /* Áp dụng animation */
   position: relative;
-  z-index: 3;
+  z-index: 7;
 }
 
 
