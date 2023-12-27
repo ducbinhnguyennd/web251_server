@@ -77,10 +77,9 @@ body {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.6;
-  margin: 0; /* Xóa margin mặc định của body */
-  padding: 0; /* Xóa padding mặc định của body */
-  height: 100vh; 
-  background: url('https://hinhanhdephd.com/wp-content/uploads/2019/12/background-tet-dep-nhat-lam-hinh-nen-dep-32.png') center/cover no-repeat; /* Đặt nền của body */
+  margin: 0;
+  
+
 }
 
 p {
@@ -435,8 +434,9 @@ icon messenger
 .message-button {
   animation: shake 1s infinite; /* Áp dụng animation */
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
+
 
 
 
@@ -676,7 +676,7 @@ icon messenger
     position: absolute;
     top: 0;
     bottom: 0;
-    z-index: 2;
+    z-index: 99999;
     display: flex;
     align-items: center;
 }

@@ -47,6 +47,119 @@
       animation: shake 0.5s;
     }
 
+    body {
+
+      background-image: url('https://i.pinimg.com/236x/70/31/76/703176ce7d04c8d6f048a888ba4337b4.jpg');
+      /* Đường dẫn đến hình ảnh nền */
+      background-size: 100% 100%;
+      /* Hiển thị hình ảnh nền theo tỷ lệ khung hình của trình duyệt */
+      background-position: center;
+      /* Đặt hình ảnh nền ở giữa trang */
+      background-repeat: no-repeat;
+      /* Không lặp lại hình ảnh nền */
+
+    }
+
+    .section {
+      padding: 1%;
+      height: 23%;
+      overflow: hidden;
+      background-color: rgb(251, 251, 252);
+      margin-top: 0.5%;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+    
+
+    .sc {
+      background-color: rgb(251, 251, 252);
+      margin-top: 0.5%;
+      margin-bottom: 0.5%;
+      margin-left: 10%;
+      margin-right: 10%;
+
+    }
+
+    .list {
+      overflow-x: auto;
+      /* Cho phép thanh cuộn ngang khi nội dung bên trong vượt ra khỏi kích thước của .section */
+      white-space: nowrap;
+      background-color: rgb(251, 251, 252);
+    }
+
+    .sp {
+      margin-top: 1%;
+      margin-left: 2%;
+      margin-right: 2%;
+      margin-bottom: 2%;
+    }
+
+    #header {
+      width: 100%;
+
+    }
+
+    #left,
+    #right {
+      width: 10%;
+      animation: tilt 2s ease-in-out infinite reverse;
+      position: absolute;
+      z-index: 2;
+      bottom: 0;
+      will-change: transform;
+    }
+
+    #left {
+      left: 0;
+    }
+
+    #right {
+      right: 0;
+    }
+
+    #thich {
+      box-sizing: border-box;
+      margin-left: 50px;
+      /* Để tránh chồng lấn với hình ảnh bên trái */
+      margin-right: 50px;
+      /* Để tránh chồng lấn với hình ảnh bên phải */
+      z-index: 1;
+    }
+
+    #hi {
+      bottom: 0;
+      position: relative;
+    }
+
+    #imagedoi {
+      position: absolute;
+      top: 14%;
+      left: 0;
+      right: 0;
+      z-index: 2;
+    }
+
+    #billboard {
+      height: 13%;
+      overflow: hidden;
+      position: relative;
+      z-index: 9;
+    }
+
+    @keyframes tilt {
+      0% {
+        transform: rotate(-5deg);
+      }
+
+      50% {
+        transform: rotate(10deg);
+      }
+
+      100% {
+        transform: rotate(-5deg);
+      }
+    }
+
     @keyframes shake {
       0% {
         transform: translate(0, 0);
@@ -103,9 +216,12 @@
 
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true"
   tabindex="0">
+
   <button id="fanpageButton" class="message-button">
     <i class="fab fa-facebook-messenger"></i>
   </button>
+
+
 
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
@@ -229,7 +345,8 @@
     </div>
   </div>
 
-  <header id="header" class="site-header header-scrolled position-fixed text-black bg-light">
+  <header id="header"
+    class="site-header header-scrolled position-fixed text-black bg-light mx-auto overflow-hidden position-relative">
     <nav id="header-nav" class="navbar navbar-expand-lg px-3 mb-3">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">
@@ -268,7 +385,7 @@
                 <a class="nav-link me-4 dropdown-toggle link-dark" data-bs-toggle="dropdown" href="#" role="button"
                   aria-expanded="false">Thêm</a>
                 <ul class="dropdown-menu">
-                 
+
                   <li>
                     <a href="blog.html" class="dropdown-item">Blog</a>
                   </li>
@@ -321,7 +438,8 @@
       </div>
     </nav>
   </header>
-  <section id="billboard" class="position-relative overflow-hidden bg-light-blue">
+
+  <section id="billboard" class="position-relative bg-light-blue ">
     <div class="swiper main-swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
@@ -371,487 +489,428 @@
       </svg>
     </div>
   </section>
-  <section id="company-services" class="padding-large">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-md-6 pb-3">
-          <div class="icon-box d-flex">
-            <div class="icon-box-icon pe-3 pb-3">
-              <svg class="cart-outline">
-                <use xlink:href="#cart-outline" />
-              </svg>
-            </div>
-            <div class="icon-box-content">
-              <h3 class="card-title text-uppercase text-dark">Giao hàng miễn phí</h3>
-              <p>Tận nhà, tận tay, kiểm tra thoải mái.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 pb-3">
-          <div class="icon-box d-flex">
-            <div class="icon-box-icon pe-3 pb-3">
-              <svg class="shield-plus">
-                <use xlink:href="#shield-plus" />
-              </svg>
-            </div>
-            <div class="icon-box-content">
-              <h3 class="card-title text-uppercase text-dark">Trả góp 0%</h3>
-              <p> Không cần thủ tục phức tạp. Bạn chỉ cần chọn sản phẩm bạn muốn. Chúng tôi cam kết đem lại sự thuận lợi
-                và tiết kiệm cho bạn trong việc sắm đồ mới. </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 pb-3">
-          <div class="icon-box d-flex">
-            <div class="icon-box-icon pe-3 pb-3">
-              <svg class="quality">
-                <use xlink:href="#quality" />
-              </svg>
-            </div>
-            <div class="icon-box-content">
-              <h3 class="card-title text-uppercase text-dark">Đảm bảo chất lượng</h3>
-              <p>Uy tín 9 Mobile luôn đặt lên hàng đầu, đảm bảo đúng như quảng cáo.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 pb-3">
-          <div class="icon-box d-flex">
-            <div class="icon-box-icon pe-3 pb-3">
-              <svg class="price-tag">
-                <use xlink:href="#price-tag" />
-              </svg>
-            </div>
-            <div class="icon-box-content">
-              <h3 class="card-title text-uppercase text-dark">Ưu đãi hàng ngày</h3>
-              <p>Các chương trình ưu đãi sẽ diễn ra và thay đổi hàng ngày. Đảm bảo quý khách luôn cập nhật thông tin mới
-                nhất.</p>
-            </div>
-          </div>
-        </div>
 
-      </div>
+  <div id="hi">
+    <div id="imagedoi">
+      <img id="left" src="https://fptshop.com.vn/Content/images/tet-2024/img-left.png?v=1221" alt="">
+      <img id="right" src="https://fptshop.com.vn/Content/images/tet-2024/img-right.png?v=1221" alt="">
     </div>
-  </section>
-  <section id="mobile-products" class="product-store position-relative padding-large no-padding-top">
-    <div class="container">
-      <div class="row">
-        <div class="display-header d-flex justify-content-between pb-3">
-          <h2 class="display-7 text-dark text-uppercase">Sản Phẩm Bán Chạy Nhất</h2>
-          <div class="btn-right">
-            <a href="/shop" class="btn btn-medium btn-normal text-uppercase">Xem Thêm</a>
-          </div>
-        </div>
-        <div class="swiper product-swiper">
-          <div class="swiper-wrapper">
-            <% listSP.forEach( ( row, index )=>{
-              if(index % 2 !=0){ %>
-
-
-              <div class="swiper-slide">
-                <div class="product-card position-relative">
-                  <div class="image-holder">
-                    <img src="data:image/jpeg;base64, <%= row.img %>" alt="product-item" class="img-fluid anhsp">
-                  </div>
-                  <div class="cart-concern position-absolute">
-                    <div class="cart-button d-flex">
-                      <a href="/chitiet/<%= row._id %>" class="btn btn-medium btn-black">Xem chi tiết<svg
-                          class="cart-outline">
-                          <use xlink:href="#cart-outline"></use>
-                        </svg></a>
-                    </div>
-                  </div>
-                  <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
-                    <h3 class="card-title text-uppercase">
-                      <a href="/chitiet/<%= row._id %>">
-                        <%= row.name %>
-                      </a>
-                    </h3>
-                    <span class="item-price text-primary">
-                      <%= row.price %>
-                    </span>
-                  </div>
+    <div id="thich">
+      <section id="company-services" class="padding-large sc">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 pb-3">
+              <div class="icon-box d-flex">
+                <div class="icon-box-icon pe-3 pb-3">
+                  <svg class="cart-outline">
+                    <use xlink:href="#cart-outline" />
+                  </svg>
                 </div>
-              </div>
-              <% }} ) %>
-                <!-- <% listSP.forEach( ( row )=>{ %>
-              <div class="swiper-slide">
-                <div class="product-card position-relative">
-                  <div class="image-holder">
-                    <img src="<%= row.img%>" alt="product-item" class="img-fluid anhsp">
-                  </div>
-                  <div class="cart-concern position-absolute">
-                    <div class="cart-button d-flex">
-                      <a href="/home/chitiet/<%= row._id %>" class="btn btn-medium btn-black">Xem chi tiết<svg class="cart-outline"><use xlink:href="#cart-outline"></use></svg></a>
-                    </div>
-                  </div>
-                  <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
-                    <h3 class="card-title text-uppercase">
-                      <a href="/home/chitiet/<%= row._id %>"> <%= row.name %></a>
-                    </h3>
-                    <span class="item-price text-primary"> <%= row.price %></span>
-                  </div>
-                </div>
-              </div>
-              <% } ) %> -->
-                <!-- 
-                <% listSP.forEach( ( row )=>{ %>
-
-                    <tr>
-                        <td>
-                            <%= row._id%>
-                        </td>
-                        <td style="text-align: center;">
-                            <img src="<%= row.img%>" alt="" style="width: 80px; height: 80px;">
-                        </td>
-
-                        <td>
-                            <a href="/home/chitiet/<%= row._id %>">
-                                <%= row.name %>
-                            </a>
-                        </td>
-                        <td>
-                            <%= row.price %>
-                        </td>
-                        <td>
-                            <%= row.noidung %>
-                        </td>
-
-                        <td> <a href="home/edit/<%= row._id %>">
-                                <button type="button" class="btn btn-light">Sửa</button>
-                            </a>
-                            <butaton type="button" class="btn btn-light" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop">
-                                xóa
-                                </button>
-
-                                <div class="modal fade" id="staticBackdrop" data-bs-keyboard="false"
-                                    aria-labelledby="staticBackdropLabel">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Chắc chắn muốn xóa
-                                                    ?</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Không</button>
-                                                <a href="home/deleteSP/<%= row._id%>"><button type="button"
-                                                        class="btn btn-primary" data-bs-dismiss="modal">Có</button></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                        </td>
-
-                    </tr>
-                    <% } ) %>
- -->
-
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="swiper-pagination position-absolute text-center"></div>
-  </section>
-  <section id="smart-watches" class="product-store padding-large position-relative">
-    <div class="container">
-      <div class="row">
-        <div class="display-header d-flex justify-content-between pb-3">
-          <h2 class="display-7 text-dark text-uppercase">Sản Phẩm Được Sale Nhiều Nhất</h2>
-          <div class="btn-right">
-            <a href="/shop" class="btn btn-medium btn-normal text-uppercase">Xem thêm</a>
-          </div>
-        </div>
-        <div class="swiper product-watch-swiper">
-          <div class="swiper-wrapper">
-            <% listSP.forEach( ( row, index )=>{
-              if(index % 2==0){ %>
-
-
-              <div class="swiper-slide">
-                <div class="product-card position-relative">
-                  <div class="image-holder">
-                    <img src="data:image/jpeg;base64, <%= row.img %>" alt="product-item" class="img-fluid anhsp">
-                  </div>
-                  <div class="cart-concern position-absolute">
-                    <div class="cart-button d-flex">
-                      <a href="/chitiet/<%= row._id %>" class="btn btn-medium btn-black">Xem chi tiết<svg
-                          class="cart-outline">
-                          <use xlink:href="#cart-outline"></use>
-                        </svg></a>
-                    </div>
-                  </div>
-                  <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
-                    <h3 class="card-title text-uppercase">
-                      <a href="#">
-                        <%= row.name %>
-                      </a>
-                    </h3>
-                    <span class="item-price text-primary">
-                      <%= row.price %>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <% }} ) %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="swiper-pagination position-absolute text-center"></div>
-  </section>
-  <section id="yearly-sale" class="bg-light-blue overflow-hidden mt-5 padding-xlarge"
-    style="background-image: url('/images/single-image1.png');background-position: right; background-repeat: no-repeat;">
-    <div class="row d-flex flex-wrap align-items-center">
-      <div class="col-md-6 col-sm-12">
-        <div class="text-content offset-4 padding-medium">
-          <h1>Sale lên đến 45%</h3>
-            <h1>cho mọi sản phẩm</h2>
-              <a href="/shop" class="btn btn-medium btn-dark text-uppercase btn-rounded-none">Shop Sale</a>
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-12">
-
-      </div>
-    </div>
-  </section>
-  <section id="latest-blog" class="padding-large">
-    <div class="container">
-      <div class="row">
-        <div class="display-header d-flex justify-content-between pb-3">
-          <h2 class="display-7 text-dark text-uppercase">Phụ kiện đi kèm</h2>
-          <div class="btn-right">
-            <a href="blog.html" class="btn btn-medium btn-normal text-uppercase">ĐỌC THÊM</a>
-          </div>
-        </div>
-        <div class="post-grid d-flex flex-wrap justify-content-between">
-          <div class="col-lg-4 col-sm-12">
-            <div class="card border-none me-3">
-              <div class="card-image">
-                <img src="/images/post-item1.jpg" alt="" class="img-fluid">
-              </div>
-            </div>
-            <div class="card-body text-uppercase">
-              <div class="card-meta text-muted">
-                <span class="meta-date">Hàng chính hãng</span>
-                <span class="meta-category">- 9 Mobile</span>
-              </div>
-              <h3 class="card-title">
-                <a href="#">Củ sạc nhanh Apple 20W Type-C</a>
-              </h3>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-12">
-            <div class="card border-none me-3">
-              <div class="card-image">
-                <img src="/images/post-item2.jpg" alt="" class="img-fluid">
-              </div>
-            </div>
-            <div class="card-body text-uppercase">
-              <div class="card-meta text-muted">
-                <span class="meta-date">Hàng chính hãng</span>
-                <span class="meta-category">- 9 Mobile</span>
-              </div>
-              <h3 class="card-title">
-                <a href="#">Dây cáp sạc nhanh Apple</a>
-              </h3>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-12">
-            <div class="card border-none me-3">
-              <div class="card-image">
-                <img src="/images/post-item3.jpg" alt="" class="img-fluid">
-              </div>
-            </div>
-            <div class="card-body text-uppercase">
-              <div class="card-meta text-muted">
-                <span class="meta-date">Hàng chính hãng</span>
-                <span class="meta-category">- 9 Mobile</span>
-              </div>
-              <h3 class="card-title">
-                <a href="#">Ốp lưng dẻo thời trang, cường lực chắc chắn</a>
-              </h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="testimonials" class="position-relative">
-    <div class="container">
-      <div class="row">
-        <div class="review-content position-relative">
-          <div class="swiper-icon swiper-arrow swiper-arrow-prev position-absolute d-flex align-items-center">
-            <svg class="chevron-left">
-              <use xlink:href="#chevron-left" />
-            </svg>
-          </div>
-          <div class="swiper testimonial-swiper">
-            <div class="quotation text-center">
-              <svg class="quote">
-                <use xlink:href="#quote" />
-              </svg>
-            </div>
-            <div class="swiper-wrapper">
-              <div class="swiper-slide text-center d-flex justify-content-center">
-                <div class="review-item col-md-10">
-                  <i class="icon icon-review"></i>
-                  <h4>“Chất Lượng Điều Khiển Thương Hiệu, Thương Hiệu Điều Khiển Cuộc Đời. Điều đó không chỉ là lời nói,
-                    mà còn là tâm huyết và cam kết của chúng tôi với mọi sản phẩm. Chúng tôi không chỉ tạo ra sản phẩm,
-                    chúng tôi tạo ra niềm tin, tạo ra sự hài lòng và tạo nên những kỷ niệm đáng nhớ.”</blockquote>
-                    <div class="rating">
-                      <svg class="star star-fill">
-                        <use xlink:href="#star-fill"></use>
-                      </svg>
-                      <svg class="star star-fill">
-                        <use xlink:href="#star-fill"></use>
-                      </svg>
-                      <svg class="star star-fill">
-                        <use xlink:href="#star-fill"></use>
-                      </svg>
-                      <svg class="star star-half">
-                        <use xlink:href="#star-half"></use>
-                      </svg>
-                      <svg class="star star-empty">
-                        <use xlink:href="#star-empty"></use>
-                      </svg>
-                    </div>
-                    <div class="author-detail">
-                      <div class="name text-dark text-uppercase pt-2">Emma Chamberlin</div>
-                    </div>
-                </div>
-              </div>
-              <div class="swiper-slide text-center d-flex justify-content-center">
-                <div class="review-item col-md-10">
-                  <i class="icon icon-review"></i>
-                  <h4>“Sản Phẩm Đi Cùng Cuộc Sống - Thương Hiệu Đi Cùng Niềm Tin. Với hơn một thập kỷ kinh nghiệm, chúng
-                    tôi đã xây dựng một thương hiệu được khách hàng tin dùng và yêu thích. Chúng tôi không ngừng nâng
-                    cao chất lượng để đồng hành cùng bạn trong mọi khía cạnh cuộc sống, từ công việc đến giải trí, từ
-                    gia đình đến khám phá thế giới.”</blockquote>
-                    <div class="rating">
-                      <svg class="star star-fill">
-                        <use xlink:href="#star-fill"></use>
-                      </svg>
-                      <svg class="star star-fill">
-                        <use xlink:href="#star-fill"></use>
-                      </svg>
-                      <svg class="star star-fill">
-                        <use xlink:href="#star-fill"></use>
-                      </svg>
-                      <svg class="star star-half">
-                        <use xlink:href="#star-half"></use>
-                      </svg>
-                      <svg class="star star-empty">
-                        <use xlink:href="#star-empty"></use>
-                      </svg>
-                    </div>
-                    <div class="author-detail">
-                      <div class="name text-dark text-uppercase pt-2">Jennie Rose</div>
-                    </div>
+                <div class="icon-box-content">
+                  <h3 class="card-title text-uppercase text-dark">Giao hàng miễn phí</h3>
+                  <p>Tận nhà, tận tay, kiểm tra thoải mái.</p>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="swiper-icon swiper-arrow swiper-arrow-next position-absolute d-flex align-items-center">
-            <svg class="chevron-right">
-              <use xlink:href="#chevron-right" />
-            </svg>
+            <div class="col-lg-3 col-md-6 pb-3">
+              <div class="icon-box d-flex">
+                <div class="icon-box-icon pe-3 pb-3">
+                  <svg class="shield-plus">
+                    <use xlink:href="#shield-plus" />
+                  </svg>
+                </div>
+                <div class="icon-box-content">
+                  <h3 class="card-title text-uppercase text-dark">Trả góp 0%</h3>
+                  <p> Không cần thủ tục phức tạp. Bạn chỉ cần chọn sản phẩm bạn muốn. Chúng tôi cam kết đem lại sự thuận
+                    lợi
+                    và tiết kiệm cho bạn trong việc sắm đồ mới. </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 pb-3">
+              <div class="icon-box d-flex">
+                <div class="icon-box-icon pe-3 pb-3">
+                  <svg class="quality">
+                    <use xlink:href="#quality" />
+                  </svg>
+                </div>
+                <div class="icon-box-content">
+                  <h3 class="card-title text-uppercase text-dark">Đảm bảo chất lượng</h3>
+                  <p>Uy tín 9 Mobile luôn đặt lên hàng đầu, đảm bảo đúng như quảng cáo.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 pb-3">
+              <div class="icon-box d-flex">
+                <div class="icon-box-icon pe-3 pb-3">
+                  <svg class="price-tag">
+                    <use xlink:href="#price-tag" />
+                  </svg>
+                </div>
+                <div class="icon-box-content">
+                  <h3 class="card-title text-uppercase text-dark">Ưu đãi hàng ngày</h3>
+                  <p>Các chương trình ưu đãi sẽ diễn ra và thay đổi hàng ngày. Đảm bảo quý khách luôn cập nhật thông tin
+                    mới
+                    nhất.</p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
-      </div>
-    </div>
-    <div class="swiper-pagination"></div>
-  </section>
-  <section id="subscribe" class="container-grid padding-large position-relative overflow-hidden">
-    <div class="container">
-      <div class="row">
-        <div
-          class="subscribe-content bg-dark d-flex flex-wrap justify-content-center align-items-center padding-medium">
+      </section>
+
+      <section id="mobile-products" class="product-store position-relative no-padding-top section">
+        <div class="container sp">
+          <div class="row">
+            <div class="display-header d-flex justify-content-between pb-3 ">
+              <h2 class="display-7 text-dark text-uppercase">Sản Phẩm Bán Chạy Nhất</h2>
+              <div class="btn-right">
+                <a href="/shop" class="btn btn-medium btn-normal text-uppercase">Xem Thêm</a>
+              </div>
+            </div>
+            <div class="swiper product-swiper ">
+              <div class="swiper-wrapper list">
+                <% listSP.forEach( ( row, index )=>{
+                  if(index % 2 !=0){ %>
+
+
+                  <div class="swiper-slide">
+                    <div class="product-card position-relative">
+                      <div class="image-holder">
+                        <img src="data:image/jpeg;base64, <%= row.img %>" alt="product-item" class="img-fluid anhsp">
+                      </div>
+                      <div class="cart-concern position-absolute">
+                        <div class="cart-button d-flex">
+                          <a href="/chitiet/<%= row._id %>" class="btn btn-medium btn-black">Xem chi tiết<svg
+                              class="cart-outline">
+                              <use xlink:href="#cart-outline"></use>
+                            </svg></a>
+                        </div>
+                      </div>
+                      <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
+                        <h3 class="card-title text-uppercase">
+                          <a href="/chitiet/<%= row._id %>">
+                            <%= row.name %>
+                          </a>
+                        </h3>
+                        <span class="item-price text-primary">
+                          <%= row.price %>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <% }} ) %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination position-absolute text-center"></div>
+      </section>
+      <section id="smart-watches" class="product-store position-relative section">
+        <div class="container sp">
+          <div class="row">
+            <div class="display-header d-flex justify-content-between pb-3 ">
+              <h2 class="display-7 text-dark text-uppercase">Sản Phẩm Được Sale Nhiều Nhất</h2>
+              <div class="btn-right">
+                <a href="/shop" class="btn btn-medium btn-normal text-uppercase">Xem thêm</a>
+              </div>
+            </div>
+            <div class="swiper product-watch-swiper">
+              <div class="swiper-wrapper list">
+                <% listSP.forEach( ( row, index )=>{
+                  if(index % 2==0){ %>
+
+
+                  <div class="swiper-slide">
+                    <div class="product-card position-relative">
+                      <div class="image-holder">
+                        <img src="data:image/jpeg;base64, <%= row.img %>" alt="product-item" class="img-fluid anhsp">
+                      </div>
+                      <div class="cart-concern position-absolute">
+                        <div class="cart-button d-flex">
+                          <a href="/chitiet/<%= row._id %>" class="btn btn-medium btn-black">Xem chi tiết<svg
+                              class="cart-outline">
+                              <use xlink:href="#cart-outline"></use>
+                            </svg></a>
+                        </div>
+                      </div>
+                      <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
+                        <h3 class="card-title text-uppercase">
+                          <a href="#">
+                            <%= row.name %>
+                          </a>
+                        </h3>
+                        <span class="item-price text-primary">
+                          <%= row.price %>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <% }} ) %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination position-absolute text-center"></div>
+      </section>
+      <section id="yearly-sale" class="bg-light-blue overflow-hidden mt-5 section"
+        style="background-image: url('/images/single-image1.png');background-position: right; background-repeat: no-repeat;">
+        <div class="row d-flex flex-wrap align-items-center">
           <div class="col-md-6 col-sm-12">
-            <div class="display-header pe-3">
-              <h2 class="display-7 text-uppercase text-light">Đăng ký cho chúng tôi ngay</h2>
-              <p>Nhận tin tức mới nhất, cập nhật và giao dịch được gửi trực tiếp đến hộp thư đến của bạn.</p>
+            <div class="text-content offset-4 padding-medium">
+              <h1>Sale lên đến 45%</h3>
+                <h1>cho mọi sản phẩm</h2>
+                  <a href="/shop" class="btn btn-medium btn-dark text-uppercase btn-rounded-none">Shop Sale</a>
             </div>
           </div>
-          <div class="col-md-5 col-sm-12">
-            <form class="subscription-form validate">
-              <div class="input-group flex-wrap">
-                <input class="form-control btn-rounded-none" type="email" name="EMAIL"
-                  placeholder="Địa chỉ email của bạn ở đây" required="">
-                <button class="btn btn-medium btn-primary text-uppercase btn-rounded-none" type="submit"
-                  name="subscribe">Đăng ký</button>
-              </div>
-            </form>
+          <div class="col-md-6 col-sm-12">
+
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <section id="instagram" class="padding-large overflow-hidden no-padding-top">
-    <div class="container">
-      <div class="row">
-        <div class="display-header text-uppercase text-dark text-center pb-3">
-          <h2 class="display-7">Mua trên trang Facebook của chúng tôi</h2>
+      </section>
+      <section id="latest-blog" class="padding-large section">
+        <div class="container">
+          <div class="row">
+            <div class="display-header d-flex justify-content-between pb-3">
+              <h2 class="display-7 text-dark text-uppercase">Phụ kiện đi kèm</h2>
+              <div class="btn-right">
+                <a href="blog.html" class="btn btn-medium btn-normal text-uppercase">ĐỌC THÊM</a>
+              </div>
+            </div>
+            <div class="post-grid d-flex flex-wrap justify-content-between">
+              <div class="col-lg-4 col-sm-12">
+                <div class="card border-none me-3">
+                  <div class="card-image">
+                    <img src="/images/post-item1.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+                <div class="card-body text-uppercase">
+                  <div class="card-meta text-muted">
+                    <span class="meta-date">Hàng chính hãng</span>
+                    <span class="meta-category">- 9 Mobile</span>
+                  </div>
+                  <h3 class="card-title">
+                    <a href="#">Củ sạc nhanh Apple 20W Type-C</a>
+                  </h3>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-12">
+                <div class="card border-none me-3">
+                  <div class="card-image">
+                    <img src="/images/post-item2.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+                <div class="card-body text-uppercase">
+                  <div class="card-meta text-muted">
+                    <span class="meta-date">Hàng chính hãng</span>
+                    <span class="meta-category">- 9 Mobile</span>
+                  </div>
+                  <h3 class="card-title">
+                    <a href="#">Dây cáp sạc nhanh Apple</a>
+                  </h3>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-12">
+                <div class="card border-none me-3">
+                  <div class="card-image">
+                    <img src="/images/post-item3.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+                <div class="card-body text-uppercase">
+                  <div class="card-meta text-muted">
+                    <span class="meta-date">Hàng chính hãng</span>
+                    <span class="meta-category">- 9 Mobile</span>
+                  </div>
+                  <h3 class="card-title">
+                    <a href="#">Ốp lưng dẻo thời trang, cường lực chắc chắn</a>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="d-flex flex-wrap">
-          <figure class="instagram-item pe-2">
-            <a href="https://templatesjungle.com/" class="image-link position-relative">
-              <img src="/images/insta-item1.jpg" alt="instagram" class="insta-image">
-              <div class="icon-overlay position-absolute d-flex justify-content-center">
-                <svg class="instagram">
-                  <use xlink:href="#instagram"></use>
+      </section>
+      <section id="testimonials" class="position-relative section">
+        <div class="container">
+          <div class="row">
+            <div class="review-content position-relative">
+              <div class="swiper-icon swiper-arrow swiper-arrow-prev position-absolute d-flex align-items-center">
+                <svg class="chevron-left">
+                  <use xlink:href="#chevron-left" />
                 </svg>
               </div>
-            </a>
-          </figure>
-          <figure class="instagram-item pe-2">
-            <a href="https://www.facebook.com/9mobileshop251xadan" class="image-link position-relative">
-              <img src="/images/insta-item2.jpg" alt="instagram" class="insta-image">
-              <div class="icon-overlay position-absolute d-flex justify-content-center">
-                <svg class="instagram">
-                  <use xlink:href="#instagram"></use>
+              <div class="swiper testimonial-swiper">
+                <div class="quotation text-center">
+                  <svg class="quote">
+                    <use xlink:href="#quote" />
+                  </svg>
+                </div>
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide text-center d-flex justify-content-center">
+                    <div class="review-item col-md-10">
+                      <i class="icon icon-review"></i>
+                      <h4>“Chất Lượng Điều Khiển Thương Hiệu, Thương Hiệu Điều Khiển Cuộc Đời. Điều đó không chỉ là lời
+                        nói,
+                        mà còn là tâm huyết và cam kết của chúng tôi với mọi sản phẩm. Chúng tôi không chỉ tạo ra sản
+                        phẩm,
+                        chúng tôi tạo ra niềm tin, tạo ra sự hài lòng và tạo nên những kỷ niệm đáng nhớ.”</blockquote>
+                        <div class="rating">
+                          <svg class="star star-fill">
+                            <use xlink:href="#star-fill"></use>
+                          </svg>
+                          <svg class="star star-fill">
+                            <use xlink:href="#star-fill"></use>
+                          </svg>
+                          <svg class="star star-fill">
+                            <use xlink:href="#star-fill"></use>
+                          </svg>
+                          <svg class="star star-half">
+                            <use xlink:href="#star-half"></use>
+                          </svg>
+                          <svg class="star star-empty">
+                            <use xlink:href="#star-empty"></use>
+                          </svg>
+                        </div>
+                        <div class="author-detail">
+                          <div class="name text-dark text-uppercase pt-2">Emma Chamberlin</div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide text-center d-flex justify-content-center">
+                    <div class="review-item col-md-10">
+                      <i class="icon icon-review"></i>
+                      <h4>“Sản Phẩm Đi Cùng Cuộc Sống - Thương Hiệu Đi Cùng Niềm Tin. Với hơn một thập kỷ kinh nghiệm,
+                        chúng
+                        tôi đã xây dựng một thương hiệu được khách hàng tin dùng và yêu thích. Chúng tôi không ngừng
+                        nâng
+                        cao chất lượng để đồng hành cùng bạn trong mọi khía cạnh cuộc sống, từ công việc đến giải trí,
+                        từ
+                        gia đình đến khám phá thế giới.”</blockquote>
+                        <div class="rating">
+                          <svg class="star star-fill">
+                            <use xlink:href="#star-fill"></use>
+                          </svg>
+                          <svg class="star star-fill">
+                            <use xlink:href="#star-fill"></use>
+                          </svg>
+                          <svg class="star star-fill">
+                            <use xlink:href="#star-fill"></use>
+                          </svg>
+                          <svg class="star star-half">
+                            <use xlink:href="#star-half"></use>
+                          </svg>
+                          <svg class="star star-empty">
+                            <use xlink:href="#star-empty"></use>
+                          </svg>
+                        </div>
+                        <div class="author-detail">
+                          <div class="name text-dark text-uppercase pt-2">Jennie Rose</div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-icon swiper-arrow swiper-arrow-next position-absolute d-flex align-items-center">
+                <svg class="chevron-right">
+                  <use xlink:href="#chevron-right" />
                 </svg>
               </div>
-            </a>
-          </figure>
-          <figure class="instagram-item pe-2">
-            <a href="https://www.facebook.com/9mobileshop251xadan" class="image-link position-relative">
-              <img src="/images/insta-item3.jpg" alt="instagram" class="insta-image">
-              <div class="icon-overlay position-absolute d-flex justify-content-center">
-                <svg class="instagram">
-                  <use xlink:href="#instagram"></use>
-                </svg>
-              </div>
-            </a>
-          </figure>
-          <figure class="instagram-item pe-2">
-            <a href="https://www.facebook.com/9mobileshop251xadan" class="image-link position-relative">
-              <img src="/images/insta-item4.jpg" alt="instagram" class="insta-image">
-              <div class="icon-overlay position-absolute d-flex justify-content-center">
-                <svg class="instagram">
-                  <use xlink:href="#instagram"></use>
-                </svg>
-              </div>
-            </a>
-          </figure>
-          <figure class="instagram-item pe-2">
-            <a href="https://www.facebook.com/9mobileshop251xadan" class="image-link position-relative">
-              <img src="/images/insta-item5.jpg" alt="instagram" class="insta-image">
-              <div class="icon-overlay position-absolute d-flex justify-content-center">
-                <svg class="instagram">
-                  <use xlink:href="#instagram"></use>
-                </svg>
-              </div>
-            </a>
-          </figure>
+            </div>
+          </div>
         </div>
-      </div>
+        <div class="swiper-pagination"></div>
+      </section>
+      <section id="subscribe" class="container-grid padding-large position-relative overflow-hidden section">
+        <div class="container">
+          <div class="row">
+            <div
+              class="subscribe-content bg-dark d-flex flex-wrap justify-content-center align-items-center padding-medium">
+              <div class="col-md-6 col-sm-12">
+                <div class="display-header pe-3">
+                  <h2 class="display-7 text-uppercase text-light">Đăng ký cho chúng tôi ngay</h2>
+                  <p>Nhận tin tức mới nhất, cập nhật và giao dịch được gửi trực tiếp đến hộp thư đến của bạn.</p>
+                </div>
+              </div>
+              <div class="col-md-5 col-sm-12">
+                <form class="subscription-form validate">
+                  <div class="input-group flex-wrap">
+                    <input class="form-control btn-rounded-none" type="email" name="EMAIL"
+                      placeholder="Địa chỉ email của bạn ở đây" required="">
+                    <button class="btn btn-medium btn-primary text-uppercase btn-rounded-none" type="submit"
+                      name="subscribe">Đăng ký</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="instagram" class="padding-large overflow-hidden no-padding-top section">
+        <div class="container">
+          <div class="row">
+            <div class="display-header text-uppercase text-dark text-center pb-3">
+              <h2 class="display-7">Mua trên trang Facebook của chúng tôi</h2>
+            </div>
+            <div class="d-flex flex-wrap">
+              <figure class="instagram-item pe-2">
+                <a href="https://templatesjungle.com/" class="image-link position-relative">
+                  <img src="/images/insta-item1.jpg" alt="instagram" class="insta-image">
+                  <div class="icon-overlay position-absolute d-flex justify-content-center">
+                    <svg class="instagram">
+                      <use xlink:href="#instagram"></use>
+                    </svg>
+                  </div>
+                </a>
+              </figure>
+              <figure class="instagram-item pe-2">
+                <a href="https://www.facebook.com/9mobileshop251xadan" class="image-link position-relative">
+                  <img src="/images/insta-item2.jpg" alt="instagram" class="insta-image">
+                  <div class="icon-overlay position-absolute d-flex justify-content-center">
+                    <svg class="instagram">
+                      <use xlink:href="#instagram"></use>
+                    </svg>
+                  </div>
+                </a>
+              </figure>
+              <figure class="instagram-item pe-2">
+                <a href="https://www.facebook.com/9mobileshop251xadan" class="image-link position-relative">
+                  <img src="/images/insta-item3.jpg" alt="instagram" class="insta-image">
+                  <div class="icon-overlay position-absolute d-flex justify-content-center">
+                    <svg class="instagram">
+                      <use xlink:href="#instagram"></use>
+                    </svg>
+                  </div>
+                </a>
+              </figure>
+              <figure class="instagram-item pe-2">
+                <a href="https://www.facebook.com/9mobileshop251xadan" class="image-link position-relative">
+                  <img src="/images/insta-item4.jpg" alt="instagram" class="insta-image">
+                  <div class="icon-overlay position-absolute d-flex justify-content-center">
+                    <svg class="instagram">
+                      <use xlink:href="#instagram"></use>
+                    </svg>
+                  </div>
+                </a>
+              </figure>
+              <figure class="instagram-item pe-2">
+                <a href="https://www.facebook.com/9mobileshop251xadan" class="image-link position-relative">
+                  <img src="/images/insta-item5.jpg" alt="instagram" class="insta-image">
+                  <div class="icon-overlay position-absolute d-flex justify-content-center">
+                    <svg class="instagram">
+                      <use xlink:href="#instagram"></use>
+                    </svg>
+                  </div>
+                </a>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
-  <footer id="footer" class="overflow-hidden">
-    <div class="container">
+  </div>
+  <footer id="footer" class="overflow-hidden section">
+    <div class="container sp">
       <div class="row">
         <div class="footer-top-area">
           <div class="row d-flex flex-wrap justify-content-between">
