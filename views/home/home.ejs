@@ -69,11 +69,11 @@
                             </a>
                             <form action="/home/deleteSP/<%= row._id %>" method="post" id="deleteForm">
                                 <button type="button" class="btn btn-light" data-bs-toggle="modal"
-                                    data-bs-target="#staticBackdrop">
+                                    data-bs-target="#deleteModal<%= row._id %>">
                                     Xóa
                                 </button>
 
-                                <div class="modal fade" id="staticBackdrop" data-bs-keyboard="false"
+                                <div class="modal fade" id="deleteModal<%= row._id %>" data-bs-keyboard="false"
                                     aria-labelledby="staticBackdropLabel">
                                     <div class="modal-dialog">
                                         <div class="modal-content">

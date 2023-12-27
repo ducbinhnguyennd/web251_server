@@ -121,7 +121,11 @@ exports.add = async (req, res, next) => {
       let new_sp = await objSP.save();
       console.log(new_sp);
       msg = "Lưu thành công";
+<<<<<<< HEAD
      res.redirect("/main");
+=======
+        res.redirect("/main");
+>>>>>>> aa616657de3ea684b6ed17226e213efb95dead6e
     } catch (error) {
       console.log(error);
     }
@@ -224,7 +228,11 @@ exports.edit = async (req, res, next) => {
     try {
       await objSP.save();
       msg = "Cập nhật thành công";
+<<<<<<< HEAD
       res.redirect("/main");
+=======
+       res.redirect("/main");
+>>>>>>> aa616657de3ea684b6ed17226e213efb95dead6e
     } catch (error) {
       console.log(error);
     }
@@ -284,7 +292,11 @@ exports.deleteSP = async (req, res, next) => {
   try {
     await myMD.spModel.findByIdAndDelete(idsp);
   } catch (error) {}
+<<<<<<< HEAD
   res.redirect("/main");
+=======
+    res.redirect("/main");
+>>>>>>> aa616657de3ea684b6ed17226e213efb95dead6e
 };
 
 
