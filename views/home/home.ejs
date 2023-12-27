@@ -65,32 +65,13 @@
                         <td> <a href="/home/edit/<%= row._id %>">
                                 <button type="button" class="btn btn-light">Sửa</button>
                             </a>
-                            <button type="button" class="btn btn-light" data-bs-toggle="modal"
+                            <form onclick="return confirm('Bạn có muốn xóa sản phẩm này?')" method="post"  action="/home/deleteSP/<%= row._id%>">
+                            <button type="button" class="btn btn-light" 
                                 data-bs-target="#staticBackdrop">
                                 xóa
                                 </button>
+                            </form>
 
-                                <div class="modal fade" id="staticBackdrop" data-bs-keyboard="false"
-                                    aria-labelledby="staticBackdropLabel">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Chắc chắn muốn xóa
-                                                    ?</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Không</button>
-                                                 <form action="/home/deleteSP/<%= row._id%>">
-                                                        <button type="submit"
-                                                        class="btn btn-primary" data-bs-dismiss="modal">Có</button>
-                                                    </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                         </td>
 
                     </tr>
