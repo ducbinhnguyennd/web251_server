@@ -21,11 +21,172 @@
     ================================================== -->
     <script src="js/modernizr.js"></script>
     <style>
-    .sanpham{
+     @media only screen and (max-width: 391px) {
+      .message-button {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: fixed;
+        bottom: 70px;
+        right: 70px;
+      }
+
+      /* Thiết lập hiệu ứng lắc lắc rung rung */
+      .message-button:hover {
+        animation: shake 0.5s;
+      }
+
+      body {
+
+        background-color: aliceblue;
+        background-image: none;
+
+      }
+      .sanpham{
       width: 400px;
       height: 400px;
 
     }
+
+      @keyframes shake {
+        0% {
+          transform: translate(0, 0);
+        }
+
+        10% {
+          transform: translate(-5px, 0);
+        }
+
+        20% {
+          transform: translate(5px, 0);
+        }
+
+        30% {
+          transform: translate(-5px, 0);
+        }
+
+        40% {
+          transform: translate(5px, 0);
+        }
+
+        50% {
+          transform: translate(-5px, 0);
+        }
+
+        60% {
+          transform: translate(5px, 0);
+        }
+
+        70% {
+          transform: translate(-5px, 0);
+        }
+
+        80% {
+          transform: translate(5px, 0);
+        }
+
+        90% {
+          transform: translate(-5px, 0);
+        }
+
+        100% {
+          transform: translate(0, 0);
+        }
+
+      }
+
+    }
+
+    @media only screen and (min-width: 392px) {
+      .message-button {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: fixed;
+        bottom: 70px;
+        right: 70px;
+      }
+
+      /* Thiết lập hiệu ứng lắc lắc rung rung */
+      .message-button:hover {
+        animation: shake 0.5s;
+      }
+
+      body {
+
+        background-color: aliceblue;
+        background-image: none;
+
+      }
+      .sanpham{
+      width: 400px;
+      height: 400px;
+
+    }
+      @keyframes shake {
+        0% {
+          transform: translate(0, 0);
+        }
+
+        10% {
+          transform: translate(-5px, 0);
+        }
+
+        20% {
+          transform: translate(5px, 0);
+        }
+
+        30% {
+          transform: translate(-5px, 0);
+        }
+
+        40% {
+          transform: translate(5px, 0);
+        }
+
+        50% {
+          transform: translate(-5px, 0);
+        }
+
+        60% {
+          transform: translate(5px, 0);
+        }
+
+        70% {
+          transform: translate(-5px, 0);
+        }
+
+        80% {
+          transform: translate(5px, 0);
+        }
+
+        90% {
+          transform: translate(-5px, 0);
+        }
+
+        100% {
+          transform: translate(0, 0);
+        }
+
+      }
+    }
+    
     </style>
   </head>
   <body>
