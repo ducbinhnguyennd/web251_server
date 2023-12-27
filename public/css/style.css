@@ -81,6 +81,16 @@ body {
   
 
 }
+.swiper-wrapper {
+  display: flex;
+  justify-content: space-between; /* Đảm bảo khoảng cách giữa các item bằng nhau */
+  flex-wrap: wrap; /* Cho phép các item xuống dòng khi không đủ chỗ */
+}
+
+.swiper-slide {
+  width: calc(50% - 10px); /* 50% chiều rộng với khoảng cách giữa là 10px */
+  margin-bottom: 20px; /* Khoảng cách giữa các dòng */
+}
 
 p {
   font-size: 1.2em;
