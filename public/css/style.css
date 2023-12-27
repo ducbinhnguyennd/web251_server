@@ -808,7 +808,7 @@ icon messenger
   #billboard .image-holder {
     margin-top: -390px;
     opacity: 0.5;
-    height: 200px;
+    height: 100%;
   }
 
   #billboard .swiper-arrow {
