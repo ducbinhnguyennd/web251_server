@@ -47,133 +47,136 @@
       animation: shake 0.5s;
     }
 
-    body {
+    @media only screen and (max-width: 768px) {
+      body {
 
-      background-image: url('https://i.pinimg.com/236x/70/31/76/703176ce7d04c8d6f048a888ba4337b4.jpg');
-      /* Đường dẫn đến hình ảnh nền */
-      background-size: 100% 100%;
-      /* Hiển thị hình ảnh nền theo tỷ lệ khung hình của trình duyệt */
-      background-position: center;
-      /* Đặt hình ảnh nền ở giữa trang */
-      background-repeat: no-repeat;
-      /* Không lặp lại hình ảnh nền */
+        background-image: url('https://i.pinimg.com/236x/70/31/76/703176ce7d04c8d6f048a888ba4337b4.jpg');
+        /* Đường dẫn đến hình ảnh nền */
+        background-size: 100% 100%;
+        /* Hiển thị hình ảnh nền theo tỷ lệ khung hình của trình duyệt */
+        background-position: center;
+        /* Đặt hình ảnh nền ở giữa trang */
+        background-repeat: no-repeat;
+        /* Không lặp lại hình ảnh nền */
 
-    }
-
-    .section {
-      padding: 1%;
-      height: 23%;
-      overflow: hidden;
-      background-color: rgb(251, 251, 252);
-      margin-top: 0.5%;
-      margin-left: 10%;
-      margin-right: 10%;
-    }
-
-
-    .sc {
-      background-color: rgb(251, 251, 252);
-      margin-top: 0.5%;
-      margin-bottom: 1%;
-      margin-left: 10%;
-      margin-right: 10%;
-
-    }
-
-    .list {
-      overflow-x: auto;
-      /* Cho phép thanh cuộn ngang khi nội dung bên trong vượt ra khỏi kích thước của .section */
-      white-space: nowrap;
-      background-color: rgb(251, 251, 252);
-    }
-
-    .sp {
-      margin-top: 1%;
-      margin-left: 2%;
-      margin-right: 2%;
-      margin-bottom: 2%;
-    }
-
-    #header {
-      width: 100%;
-
-    }
-
-    #left,
-    #right {
-      width: 10%;
-      animation: tilt 2s ease-in-out infinite reverse;
-      position: absolute;
-      z-index: 2;
-      bottom: 0;
-      will-change: transform;
-    }
-
-    #left {
-      left: 0;
-    }
-
-    #right {
-      right: 0;
-    }
-
-    #thich {
-      box-sizing: border-box;
-      margin-left: 50px;
-      /* Để tránh chồng lấn với hình ảnh bên trái */
-      margin-right: 50px;
-      /* Để tránh chồng lấn với hình ảnh bên phải */
-      z-index: 1;
-    }
-
-    #hi {
-      bottom: 0;
-      position: relative;
-    }
-
-    #imagedoi {
-      position: absolute;
-      top: 14%;
-      left: 0;
-      right: 0;
-      z-index: 2;
-    }
-
-    #billboard {
-      height: 13%;
-      overflow: hidden;
-      position: relative;
-      z-index: 9;
-    }
-
-    .swiper-wrapper {
-      display: flex;
-      justify-content: space-between;
-      /* Đảm bảo khoảng cách giữa các item bằng nhau */
-      flex-wrap: wrap;
-      /* Cho phép các item xuống dòng khi không đủ chỗ */
-    }
-
-    .swiper-slide {
-      width: calc(50% - 10px);
-      /* 50% chiều rộng với khoảng cách giữa là 10px */
-      margin-bottom: 20px;
-      /* Khoảng cách giữa các dòng */
-    }
-
-    @keyframes tilt {
-      0% {
-        transform: rotate(-5deg);
       }
 
-      50% {
-        transform: rotate(10deg);
+      .section {
+        padding: 1%;
+        height: 23%;
+        overflow: hidden;
+        background-color: rgb(251, 251, 252);
+        margin-top: 0.5%;
+        margin-left: 10%;
+        margin-right: 10%;
       }
 
-      100% {
-        transform: rotate(-5deg);
+
+      .sc {
+        background-color: rgb(251, 251, 252);
+        margin-top: 0.5%;
+        margin-bottom: 1%;
+        margin-left: 10%;
+        margin-right: 10%;
+
+      }
+
+      .list {
+        overflow-x: auto;
+        /* Cho phép thanh cuộn ngang khi nội dung bên trong vượt ra khỏi kích thước của .section */
+        white-space: nowrap;
+        background-color: rgb(251, 251, 252);
+      }
+
+      .sp {
+        margin-top: 1%;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-bottom: 2%;
+      }
+
+      #header {
+        width: 100%;
+
+      }
+
+      #left,
+      #right {
+        width: 10%;
+        animation: tilt 2s ease-in-out infinite reverse;
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        will-change: transform;
+      }
+
+      #left {
+        left: 0;
+      }
+
+      #right {
+        right: 0;
+      }
+
+      #thich {
+        box-sizing: border-box;
+        margin-left: 50px;
+        /* Để tránh chồng lấn với hình ảnh bên trái */
+        margin-right: 50px;
+        /* Để tránh chồng lấn với hình ảnh bên phải */
+        z-index: 1;
+      }
+
+      #hi {
+        bottom: 0;
+        position: relative;
+      }
+
+      #imagedoi {
+        position: absolute;
+        top: 14%;
+        left: 0;
+        right: 0;
+        z-index: 2;
+      }
+
+      #billboard {
+        height: 13%;
+        overflow: hidden;
+        position: relative;
+        z-index: 9;
+      }
+
+      .swiper-wrapper {
+        display: flex;
+        justify-content: space-between;
+        /* Đảm bảo khoảng cách giữa các item bằng nhau */
+        flex-wrap: wrap;
+        /* Cho phép các item xuống dòng khi không đủ chỗ */
+      }
+
+      .swiper-slide {
+        width: calc(50% - 10px);
+        /* 50% chiều rộng với khoảng cách giữa là 10px */
+        margin-bottom: 20px;
+        /* Khoảng cách giữa các dòng */
+      }
+
+      @keyframes tilt {
+        0% {
+          transform: rotate(-5deg);
+        }
+
+        50% {
+          transform: rotate(10deg);
+        }
+
+        100% {
+          transform: rotate(-5deg);
+        }
       }
     }
+
 
     @keyframes shake {
       0% {
