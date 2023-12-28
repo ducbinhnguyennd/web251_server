@@ -48,7 +48,7 @@
 
       body {
         font-family: var(--body-font);
-        font-size: 14px;
+        font-size: 10px;
         font-weight: 500;
         line-height: 1.6;
         margin: 0;
@@ -58,8 +58,10 @@
       }
 
       .section {
-        padding-left: 0.5%;
-        padding-bottom: 1%;
+        padding-left: 2%;
+        padding-right: 5%;
+        padding-bottom: 3%;
+        padding-top: 2%;
         width: 100%;
         overflow: hidden;
         background-color: rgb(251, 251, 252);
@@ -69,6 +71,7 @@
 
 
       .sc {
+        margin-top: 15%;
         background-color: rgb(251, 251, 252);
         margin-bottom: 1%;
         margin-left: 1%;
@@ -84,11 +87,14 @@
       }
 
       .list {
-        overflow: hidden;
-        overflow-x: auto;
+        width: 100%;
         background-color: rgb(251, 251, 252);
-        box-sizing: border-box;
-        margin: 0 auto;
+      }
+      .thanhphan{
+        width: 100%;
+      }
+      .name{
+        margin-right: 1px;
       }
 
 
@@ -97,19 +103,9 @@
         display: none;
       }
 
-      #thich {
-        margin-bottom: 10%;
-        box-sizing: border-box;
-        margin-left: 10px;
-        /* Để tránh chồng lấn với hình ảnh bên trái */
-        margin-right: 10px;
-        /* Để tránh chồng lấn với hình ảnh bên phải */
-        z-index: 1;
-      }
-
       #hi {
-        top: 5%;
-        bottom: 10%;
+        top: 10%;
+        bottom: 7%;
         position: relative;
       }
 
@@ -124,6 +120,17 @@
       .anh {
         width: 290px;
         height: auto;
+      }
+      .divimgsale{
+        width: 100%;
+        height: 40%;
+        margin: 0 auto;
+      }
+      .imgsale{
+        width: 100%;
+        height: 100%;
+        margin-bottom: 3%;
+
       }
 
       @keyframes shake {
@@ -202,20 +209,23 @@
 
         background-image: url('https://images.fpt.shop/unsafe/fit-in/filters:quality(95):fill(transparent)/fptshop.com.vn/Uploads/Originals/2023/12/22/638388517162378445_desk-header-bg.png');
         /* Đường dẫn đến hình ảnh nền */
-        background-size: 100% 50%;
+        background-size: 100% auto;
         /* Hiển thị hình ảnh nền theo tỷ lệ khung hình của trình duyệt */
         background-position: top;
         /* Đặt hình ảnh nền ở giữa trang */
         background-repeat: no-repeat;
         /* Không lặp lại hình ảnh nền */
         background-color: #fb2104;
+        
 
       }
 
       .section {
-        padding: 1%;
+        padding-left: 2%;
+        padding-right: 5%;
+        padding-bottom: 3%;
+        padding-top: 2%;
         height: 23%;
-        overflow: hidden;
         background-color: rgb(251, 251, 252);
         margin-top: 0.5%;
         margin-left: 10%;
@@ -241,9 +251,7 @@
       }
 
       .list {
-        overflow-x: auto;
-        /* Cho phép thanh cuộn ngang khi nội dung bên trong vượt ra khỏi kích thước của .section */
-        white-space: nowrap;
+        width: 100%;
         background-color: rgb(251, 251, 252);
       }
 
@@ -288,6 +296,7 @@
       }
 
       #hi {
+
         bottom: 0;
         position: relative;
       }
@@ -306,13 +315,12 @@
         position: relative;
         z-index: 9;
         background-image: none;
-        align-items: center;
 
       }
 
       .anh {
         width: 270px;
-        height: 310px;
+        height: auto;
       }
 
       #footer-bottom {
@@ -329,9 +337,23 @@
 
       #anhbanner {
         margin-top: 150px;
-        margin-left: 80px;
-        width: 1100px;
+        margin-left: 50px;
+        width: 1200px;
         height: 300px;
+      }
+      .divimgsale{
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+      }
+      .imgsale{
+        width: 100%;
+        height: auto;
+        margin-bottom: 3%;
+
+      }
+      h6{
+        text-transform: uppercase;
       }
 
       @keyframes tilt {
@@ -731,31 +753,31 @@
               <div class="swiper-wrapper list">
                 <% listSP.forEach( ( row, index )=>{
                   if(index % 2 !=0){ %>
-                  <div class="swiper-slide">
-                    <div class="product-card position-relative">
-                      <div class="image-holder">
-                        <img src="data:image/jpeg;base64, <%= row.img %>" alt="product-item" class="img-fluid anh">
-                      </div>
-                      <div class="cart-concern position-absolute">
-                        <div class="cart-button d-flex">
-                          <a href="/chitiet/<%= row._id %>" class="btn btn-medium btn-black">Xem chi tiết<svg
-                              class="cart-outline">
-                              <use xlink:href="#cart-outline"></use>
-                            </svg></a>
+                    <div class="swiper-slide">
+                      <div class="product-card position-relative">
+                        <div class="image-holder">
+                          <img src="data:image/jpeg;base64, <%= row.img %>" alt="product-item" class="img-fluid anh">
+                        </div>
+                        <div class="cart-concern position-absolute">
+                          <div class="cart-button d-flex">
+                            <a href="/chitiet/<%= row._id %>" class="btn btn-medium btn-black">Xem chi tiết<svg
+                                class="cart-outline">
+                                <use xlink:href="#cart-outline"></use>
+                              </svg></a>
+                          </div>
+                        </div>
+                        <div class="card-detail d-flex justify-content-between align-items-baseline pt-3 thanhphan">
+                          <h6>
+                            <a href="/chitiet/<%= row._id %>" class="name">
+                              <%= row.name %>
+                            </a>
+                          </h6>
+                          <span class="item-price text-primary price text-wrap">
+                            <%= row.price %>
+                          </span>
                         </div>
                       </div>
-                      <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
-                        <h3 class="card-title text-uppercase">
-                          <a href="/chitiet/<%= row._id %>">
-                            <%= row.name %>
-                          </a>
-                        </h3>
-                        <span class="item-price text-primary">
-                          <%= row.price %>
-                        </span>
-                      </div>
                     </div>
-                  </div>
                   <% }} ) %>
               </div>
             </div>
@@ -772,12 +794,13 @@
                 <a href="/shop" class="btn btn-medium btn-normal text-uppercase">Xem thêm</a>
               </div>
             </div>
+            <div class="divimgsale">
+              <img class="imgsale" src="https://images.fpt.shop/unsafe/fit-in/1168x97/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/12/25/638391388651553863_H7-%201200x100.png" alt="">
+            </div>
             <div class="swiper product-watch-swiper">
               <div class="swiper-wrapper list">
                 <% listSP.forEach( ( row, index )=>{
                   if(index % 2==0){ %>
-
-
                   <div class="swiper-slide">
                     <div class="product-card position-relative">
                       <div class="image-holder">
@@ -791,13 +814,13 @@
                             </svg></a>
                         </div>
                       </div>
-                      <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
-                        <h3 class="card-title text-uppercase">
-                          <a href="#">
+                      <div class="card-detail d-flex justify-content-between align-items-baseline pt-3 thanhphan">
+                        <h6>
+                          <a href="/chitiet/<%= row._id %>" class="name">
                             <%= row.name %>
                           </a>
-                        </h3>
-                        <span class="item-price text-primary">
+                        </h6>
+                        <span class="item-price text-primary price text-wrap">
                           <%= row.price %>
                         </span>
                       </div>
