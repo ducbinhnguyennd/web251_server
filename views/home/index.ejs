@@ -200,9 +200,9 @@
 
       body {
 
-        background-image: url('https://i.pinimg.com/236x/70/31/76/703176ce7d04c8d6f048a888ba4337b4.jpg');
+        background-image: url('https://img6.thuthuatphanmem.vn/uploads/2022/04/19/background-den-long-do-tet-dep_045757546.jpg');
         /* Đường dẫn đến hình ảnh nền */
-        background-size: cover;
+        background-size: 100% 20%;
         /* Hiển thị hình ảnh nền theo tỷ lệ khung hình của trình duyệt */
         background-position: center;
         /* Đặt hình ảnh nền ở giữa trang */
@@ -260,12 +260,12 @@
 
       #left,
       #right {
-        height: 40%;
+        height: 50%;
         width: 10%;
         animation: tilt 2s ease-in-out infinite reverse;
         position: fixed;
         z-index: 2;
-        bottom: 45%;
+        bottom: 35%;
         will-change: transform;
       }
 
@@ -304,6 +304,9 @@
         overflow: hidden;
         position: relative;
         z-index: 9;
+        background-image: none;
+        align-items: center;
+
       }
 
       .anh {
@@ -316,33 +319,18 @@
         background-color: rgb(251, 251, 252);
       }
 
-      #billboard .banner-content {
-        margin-left: 100px;
-        margin-right: 20px;
-        margin-top: 290px;
-      }
 
       #billboard .image-holder {
-        margin-left: 80px;
-        opacity: 0.5;
+        margin-left: 0;
         width: 100%;
         height: 100%;
       }
-       #anhbanner {
+
+      #anhbanner {
+        margin-top: 150px;
         margin-left: 80px;
-        width: 50%;
-        height: 50%;
-      }
-
-      #billboard .swiper-arrow {
-        top: 70px;
-      }
-
-      #billboard .btn {
-        font-size: 12px;
-        /* Kích thước nút mua sắm khi màn hình nhỏ */
-        padding: 8px 16px;
-        /* Điều chỉnh kích thước padding cho nút */
+        width: 1100px;
+        height: 300px;
       }
 
       @keyframes tilt {
@@ -639,54 +627,23 @@
     </nav>
   </header>
 
-  <section id="billboard" class="position-relative bg-light-blue ">
+  <section id="billboard" class="position-relative ">
     <div class="swiper main-swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="container">
-            <div class="row d-flex align-items-center">
-              <div class="col-md-6">
-                <div class="banner-content">
-                  <h1>Sản phẩm của bạn thật tuyệt vời.</h1>
-                  <a href="/shop" class="btn btn-medium btn-dark text-uppercase btn-rounded-none">Mua sắm sản phẩm</a>
-                </div>
-              </div>
+            <div class="align-items-center">
               <div class="col-md-5">
                 <div class="image-holder">
-                  <img id="anhbanner" src="/images/banner-image1.png " alt="banner">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="container">
-            <div class="row d-flex flex-wrap align-items-center">
-              <div class="col-md-6">
-                <div class="banner-content">
-                  <h1>Mang đến sự hài lòng cho khách hàng</h1>
-                  <a href="/shop" class="btn btn-medium btn-dark text-uppercase btn-rounded-none">Mua sắm sản phẩm</a>
-                </div>
-              </div>
-              <div class="col-md-5">
-                <div class="image-holder">
-                  <img id="anhbanner" src="/images/banner-image.png" alt="banner">
+                  <img id="anhbanner"
+                    src="/images/banner.png"
+                    alt="banner">
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="swiper-icon swiper-arrow swiper-arrow-prev">
-      <svg class="chevron-left">
-        <use xlink:href="#chevron-left" />
-      </svg>
-    </div>
-    <div class="swiper-icon swiper-arrow swiper-arrow-next">
-      <svg class="chevron-right">
-        <use xlink:href="#chevron-right" />
-      </svg>
     </div>
   </section>
 
@@ -1293,10 +1250,32 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const fanpageButton = document.getElementById("fanpageButton");
+      var leftImage = document.getElementById("left");
+      var rightImage = document.getElementById("right");
+      var footer = document.getElementById("footer");
 
       fanpageButton.addEventListener("click", function () {
         // Thay thế "URL_FANPAGE_FACEBOOK_CUA_BAN" bằng đường dẫn fanpage của bạn
         window.location.href = "https://www.messenger.com/t/105703318958498";
+      });
+
+      leftImage.style.transition = "bottom 0.3s ease-in-out";
+      rightImage.style.transition = "bottom 0.3s ease-in-out";
+
+      window.addEventListener("scroll", function () {
+        var footerPosition = footer.getBoundingClientRect();
+        var imagePosition = leftImage.getBoundingClientRect();
+
+        // Kiểm tra nếu hình ảnh gần phần footer
+        if (imagePosition.bottom >= footerPosition.top) {
+
+          leftImage.style.bottom = "60%";
+          rightImage.style.bottom = "60%";
+        } else {
+          // Nếu không, đặt lại vị trí của hình ảnh
+          leftImage.style.bottom = "35%";
+          rightImage.style.bottom = "35%";
+        }
       });
     });
   </script>
