@@ -88,6 +88,9 @@
         overflow-x: auto;
         background-color: rgb(251, 251, 252);
         box-sizing: border-box;
+        ::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+        }
       }
 
 
@@ -242,10 +245,6 @@
         /* Cho phép thanh cuộn ngang khi nội dung bên trong vượt ra khỏi kích thước của .section */
         white-space: nowrap;
         background-color: rgb(251, 251, 252);
-
-        ::-webkit-scrollbar {
-          display: none;
-          /* Chrome, Safari */
         }
         }
 
