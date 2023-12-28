@@ -494,6 +494,7 @@ icon messenger
 }
 
 .message-button {
+
   animation: shake 1s infinite;
   /* Áp dụng animation */
   position: relative;
