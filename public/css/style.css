@@ -831,6 +831,12 @@ icon messenger
   fill: var(--primary-color);
 }
 
+#company-services {
+  padding-top: 1.5rem;
+  border-radius: 10px;
+  padding-bottom: 1rem;
+}
+
 @media only screen and (max-width: 991px) {
   #company-services .icon-box {
     flex-wrap: wrap;
@@ -839,6 +845,41 @@ icon messenger
 
 /* 4. Product
 /*----------------------------------------------*/
+#mobile-products {
+  padding-top: 20px;
+
+  border-radius: 10px;
+}
+
+#smart-watches {
+  border-radius: 10px;
+}
+
+#latest-blog {
+  border-radius: 10px;
+}
+
+#yearly-sale {
+  border-radius: 10px;
+}
+
+#testimonials {
+  border-radius: 10px;
+}
+
+#subscribe {
+  border-radius: 10px;
+}
+
+#instagram {
+  border-radius: 10px;
+
+}
+
+.display-header {
+  padding-top: 15px;
+}
+
 .product-store .product-card .cart-concern {
   bottom: 75px;
   width: 100%;
