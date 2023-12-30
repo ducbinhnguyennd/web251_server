@@ -799,7 +799,7 @@ icon messenger
   /* Kích thước mặc định cho nút chuyển */
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 700px) {
   #billboard .banner-content {
     margin-top: 210px;
   }
