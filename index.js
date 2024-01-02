@@ -7,19 +7,29 @@ var accountsRouter = require('./routes/accounts.route');
 var apiAccRouter = require('./routes/acc.api');
 var homeRouter = require('./routes/home.route');
 var methodOverride = require('method-override');
-// const testRouter = require('./routes/r_test');
 var bodyParser = require("body-parser");
 const { log } = require('console');
 const app = express();
+const MongoStore = require('connect-mongo');
+var db = require('./models/db');
+
+const mongoStoreOptions = {
+  mongooseConnection: db.mongoose.connection,
+  mongoUrl: uri,
+  collection: 'sessions',
+};
 
 // app.set('view engine', 'ejs'); 
 // view engine setup
 app.use(session({
   secret: 'adscascd8saa8sdv87ds78v6dsv87asvdasv8',
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
+  store: MongoStore.create(mongoStoreOptions)
   // ,cookie: { secure: true }
 }))
+
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
