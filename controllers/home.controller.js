@@ -1,6 +1,10 @@
 var myMD = require("../models/sanpham.model");
 var myMDBlog = require("../models/blog.model");
 
+
+
+
+
 async function resizeImage(buffer, width, height) {
   const originalSize = Math.ceil(Math.sqrt(buffer.length / 4));
   const newSize = Math.ceil(width * height);
@@ -129,6 +133,8 @@ exports.add = async (req, res, next) => {
     }
   }
 
+
+
   res.render("home/add.ejs", { msg: msg });
 };
 
@@ -166,18 +172,64 @@ exports.addblog = async (req, res, next) => {
       console.log(error);
     }
   }
+
+
+
   res.render("home/addblog.ejs", { msg: msg });
 };
+exports.addJsonBlog = async (req, res, next) => {
+  let msg = "";
+  console.log(req.body);
+  if (req.method == "POST") {
+    let objSP = new myMDBlog.blogModel();
 
+    try {
+      // Đọc buffer của ảnh từ req.file
+      const imageBuffer = req.file.buffer;
+
+      // Thực hiện điều chỉnh kích thước (ví dụ: giảm kích thước xuống 800x600)
+      const resizedBuffer = await resizeImage(imageBuffer, 600, 400);
+
+      // Chuyển đổi buffer thành base64
+      objSP.img_blog = resizedBuffer.toString('base64');
+    } catch (error) {
+      msg = error.message;
+    }
+
+    objSP.tieude_blog = req.body.tieude_blog;
+    objSP.noidung_blog = req.body.noidung_blog;
+
+
+    try {
+      let new_sp = await objSP.save();
+      console.log(new_sp);
+      msg = "Lưu thành công";
+    } catch (error) {
+      msg = "Error" + error.message();
+      console.log(error);
+    }
+  }
+  res.send({ message: msg });
+};
 exports.deleteBlog = async (req, res, next) => {
   let idblog = req.params.idblog;
   try {
     await myMDBlog.blogModel.findByIdAndDelete(idblog);
-    res.redirect("/main");
-  } catch (error) { console.log(error) }
+  } catch (error) { }
+  res.redirect("/main");
 
 };
 
+
+exports.deleteJsonBlog = async (req, res, next) => {
+  let idblog = req.params.idblog;
+  if (req.method === "DELETE") {
+    try {
+      await myMDBlog.blogModel.findByIdAndDelete({ _id: idblog });
+    } catch (error) { }
+  }
+  res.send({ message: 'Xóa thành công' });
+};
 exports.editBlog = async (req, res, next) => {
   let msg = "";
 
@@ -209,7 +261,29 @@ exports.editBlog = async (req, res, next) => {
 
   res.render("home/editBlog.ejs", { msg: msg, objSP: objSP });
 };
+exports.editBlogJson = async (req, res, next) => {
+  let msg = "";
 
+  let idblog = req.params.idblog;
+  let objSP = await myMDBlog.blogModel.findById(idblog);
+
+  if (req.method == "PUT") {
+
+    objSP.tieude_blog = req.body.tieude_blog;
+    objSP.noidung_blog = req.body.noidung_blog;
+
+    try {
+      let new_sp = await objSP.save();
+      console.log(new_sp);
+      msg = "Sửa thành công";
+    } catch (error) {
+      msg = "Error" + error.message();
+      console.log(error);
+    }
+  }
+
+  res.send({ message: msg });
+};
 exports.chitietblog = async (req, res, next) => {
   let idblog = req.params.idblog;
   let objSP = await myMDBlog.blogModel.findById(idblog);
@@ -218,6 +292,51 @@ exports.chitietblog = async (req, res, next) => {
 };
 
 //////////
+
+exports.addJson = async (req, res, next) => {
+  let msg = "";
+  console.log(req.body);
+  let objSP = new myMD.spModel();
+
+  if (req.method == "POST") {
+
+    objSP.img = req.body.img;
+    objSP.name = req.body.name;
+    objSP.noidung = req.body.noidung;
+    objSP.price = req.body.price;
+    objSP.GPU = req.body.GPU;
+    objSP.kichthuocmanhinh = req.body.kichthuocmanhinh;
+    objSP.congnghemanhinh = req.body.congnghemanhinh;
+    objSP.camerasau = req.body.camerasau;
+    objSP.cameratruoc = req.body.cameratruoc;
+    objSP.chip = req.body.chip;
+    objSP.bonho = req.body.bonho;
+    objSP.pin = req.body.pin;
+    objSP.hedieuhanh = req.body.hedieuhanh;
+    objSP.dophangiai = req.body.dophangiai;
+    objSP.tinhnangmanhinh = req.body.tinhnangmanhinh;
+    objSP.quayvideo = req.body.quayvideo;
+    objSP.tinhnangcamera = req.body.tinhnangcamera;
+    objSP.kichthuoc = req.body.kichthuoc;
+    objSP.trongluong = req.body.trongluong;
+    objSP.congnghesac = req.body.congnghesac;
+    objSP.congsac = req.body.congsac;
+    objSP.kieumanhinh = req.body.kieumanhinh;
+    objSP.tinhnagdacbiet = req.body.tinhnagdacbiet;
+    objSP.loai = req.body.loai;
+
+    try {
+      let new_sp = await objSP.save();
+      console.log(new_sp);
+      msg = "Lưu thành công";
+    } catch (error) {
+      msg = "Error" + error.message();
+      console.log(error);
+    }
+  }
+  res.send({ message: msg });
+};
+
 exports.edit = async (req, res, next) => {
   let msg = "";
 
@@ -273,17 +392,71 @@ exports.edit = async (req, res, next) => {
   res.render("home/edit.ejs", { msg: msg, objSP: objSP });
 };
 
+exports.editJson = async (req, res, next) => {
+  let msg = "";
+
+  let idsp = req.params.idsp;
+  let objSP = await myMD.spModel.findById(idsp);
+
+  if (req.method == "PUT") {
+
+    objSP.img = req.body.img;
+    objSP.name = req.body.name;
+    objSP.noidung = req.body.noidung;
+    objSP.price = req.body.price;
+    objSP.GPU = req.body.GPU;
+    objSP.kichthuocmanhinh = req.body.kichthuocmanhinh;
+    objSP.congnghemanhinh = req.body.congnghemanhinh;
+    objSP.camerasau = req.body.camerasau;
+    objSP.cameratruoc = req.body.cameratruoc;
+    objSP.chip = req.body.chip;
+    objSP.bonho = req.body.bonho;
+    objSP.pin = req.body.pin;
+    objSP.hedieuhanh = req.body.hedieuhanh;
+    objSP.dophangiai = req.body.dophangiai;
+    objSP.tinhnangmanhinh = req.body.tinhnangmanhinh;
+    objSP.quayvideo = req.body.quayvideo;
+    objSP.tinhnangcamera = req.body.tinhnangcamera;
+    objSP.kichthuoc = req.body.kichthuoc;
+    objSP.trongluong = req.body.trongluong;
+    objSP.congnghesac = req.body.congnghesac;
+    objSP.congsac = req.body.congsac;
+    objSP.kieumanhinh = req.body.kieumanhinh;
+    objSP.tinhnagdacbiet = req.body.tinhnagdacbiet;
+    objSP.loai = req.body.loai;
+
+    try {
+      let new_sp = await objSP.save();
+      console.log(new_sp);
+      msg = "Sửa thành công";
+    } catch (error) {
+      msg = "Error" + error.message();
+      console.log(error);
+    }
+  }
+
+  res.send({ message: msg });
+};
 
 exports.deleteSP = async (req, res, next) => {
   let idsp = req.params.idsp;
   try {
     await myMD.spModel.findByIdAndDelete(idsp);
-    res.redirect("/main");
-  } catch (error) {
-    console.log(error)
-  }
+  } catch (error) { }
+  res.redirect("/main");
+
 };
 
+
+exports.deleteJson = async (req, res, next) => {
+  let idsp = req.params.idsp;
+  if (req.method === "DELETE") {
+    try {
+      await myMD.spModel.findByIdAndDelete({ _id: idsp });
+    } catch (error) { }
+  }
+  res.send({ message: 'Xóa thành công' });
+};
 exports.chitiet = async (req, res, next) => {
   let idsp = req.params.idsp;
   let objSP = await myMD.spModel.findById(idsp);

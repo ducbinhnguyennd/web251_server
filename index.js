@@ -27,6 +27,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
 app.use('/', homeRouter);
+app.use('/danhsachsp', apiSanpham);
+
 app.use('/api', apiAccRouter);
 app.use('/accounts', accountsRouter);
 app.use('/', settingsRouter);
@@ -36,11 +38,11 @@ app.use('/', settingsRouter);
 app.use(express.static(path.join(__dirname, '/public')));
 
 
-app.use(function(req, res, next) {
-    next(createError(404));
-  });
+app.use(function (req, res, next) {
+  next(createError(404));
+});
 app.listen(3000, () => {
-    console.log('Server is running on port 3000');
-    console.log(__dirname);
+  console.log('Server is running on port 3000');
+  console.log(__dirname);
 });
 module.exports = app; 
