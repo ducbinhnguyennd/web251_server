@@ -174,8 +174,8 @@ exports.deleteBlog = async (req, res, next) => {
   try {
     await myMDBlog.blogModel.findByIdAndDelete(idblog);
     res.redirect("/main");
-  } catch (error) { }
-  console.log(error)
+  } catch (error) { console.log(error) }
+
 };
 
 exports.editBlog = async (req, res, next) => {
@@ -279,9 +279,9 @@ exports.deleteSP = async (req, res, next) => {
   try {
     await myMD.spModel.findByIdAndDelete(idsp);
     res.redirect("/main");
-  } catch (error) { }
-  console.log(error)
-
+  } catch (error) {
+    console.log(error)
+  }
 };
 
 exports.chitiet = async (req, res, next) => {
