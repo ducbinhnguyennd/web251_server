@@ -49,7 +49,7 @@ exports.login = async (req, res, next) => {
                 if(objU != null){
                     // có tồn tại user == kiểm tra password
                     if(objU.passwrd == req.body.passwrd){
-                        const token = jwt.sign({ userId: objU._id }, 'mysecretkey', { expiresIn: '1s' });
+                        const token = jwt.sign({ userId: objU._id }, 'mysecretkey', { expiresIn: '10m' });
                         req.session.userLogin = objU;
                         req.session.token = token;
                         return res.redirect('/main');
