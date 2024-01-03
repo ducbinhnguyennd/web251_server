@@ -1,4 +1,5 @@
 var md = require('../../models/user.model')
+const jwt = require('jsonwebtoken');
 
 exports.register = async (req, res, next) => {
 
@@ -48,9 +49,9 @@ exports.login = async (req, res, next) => {
                 if(objU != null){
                     // có tồn tại user == kiểm tra password
                     if(objU.passwrd == req.body.passwrd){
-                        // đúng pass = login
+                        const token = jwt.sign({ userId: objU._id }, 'mysecretkey', { expiresIn: '10m' });
                         req.session.userLogin = objU;
-                        // chuyển trang về màn hình chính hoạc danh sách
+                        req.session.token = token;
                         return res.redirect('/main');
                     }else{
                         msg = 'sai password';

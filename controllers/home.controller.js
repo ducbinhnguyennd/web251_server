@@ -4,7 +4,6 @@ var myMDBlog = require("../models/blog.model");
 
 
 
-
 async function resizeImage(buffer, width, height) {
   const originalSize = Math.ceil(Math.sqrt(buffer.length / 4));
   const newSize = Math.ceil(width * height);
