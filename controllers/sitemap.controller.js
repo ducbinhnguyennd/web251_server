@@ -25,7 +25,7 @@ exports.sitemap = async (req, res, next) => {
         writeStream.end();
 
         // Đọc và trả về nội dung của tệp sitemap.xml cho client
-        const readStream = createReadStream('sitemap.xml');
+        const readStream = createReadStream(path.join(__dirname, 'controllers', 'sitemap.xml'));
         readStream.pipe(res);
 
     } catch (error) {
