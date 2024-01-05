@@ -1,5 +1,5 @@
 const { SitemapStream, streamToPromise } = require('sitemap');
-const { createWriteStream } = require('fs'); // Chú ý sự thay đổi ở đây
+const { createWriteStream,createReadStream } = require('fs'); // Chú ý sự thay đổi ở đây
 
 const paths = ['/thanhtoan', '/shop', '/contact'];
 
