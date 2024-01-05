@@ -1,5 +1,6 @@
 const { SitemapStream, streamToPromise } = require('sitemap');
 const { createWriteStream, createReadStream } = require('fs');
+var path = require('path');
 
 const paths = ['/thanhtoan', '/shop', '/contact'];
 
@@ -19,7 +20,7 @@ exports.sitemap = async (req, res, next) => {
         const sitemapBuffer = await streamToPromise(smStream);
 
         // Ghi nội dung của sitemap vào tệp sitemap.xml
-        const writeStream = createWriteStream('sitemap.xml');
+        const writeStream = createWriteStream(path.join(__dirname, 'controllers', 'sitemap.xml'));
         writeStream.write(sitemapBuffer);
         writeStream.end();
 
