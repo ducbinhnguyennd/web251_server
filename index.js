@@ -5,6 +5,7 @@ var session = require('express-session');
 var settingsRouter = require('./routes/settings.route');
 var accountsRouter = require('./routes/accounts.route');
 var apiAccRouter = require('./routes/acc.api');
+var sitmaprouter=require('./routes/sitemap.xml');
 var homeRouter = require('./routes/home.route');
 var methodOverride = require('method-override');
 var bodyParser = require("body-parser");
@@ -41,6 +42,7 @@ app.use('/', homeRouter);
 app.use('/api', apiAccRouter);
 app.use('/accounts', accountsRouter);
 app.use('/', settingsRouter);
+app.use('/',sitmaprouter);
 
 // app.use('/test', testRouter);
 
