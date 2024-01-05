@@ -20,12 +20,12 @@ exports.sitemap = async (req, res, next) => {
         const sitemapBuffer = await streamToPromise(smStream);
 
         // Ghi nội dung của sitemap vào tệp sitemap.xml
-        const writeStream = createWriteStream(path.join(__dirname, 'controllers', 'sitemap.xml'));
+        const writeStream = createWriteStream(path.join(__dirname,'sitemap.xml'));
         writeStream.write(sitemapBuffer);
         writeStream.end();
 
         // Đọc và trả về nội dung của tệp sitemap.xml cho client
-        const readStream = createReadStream(path.join(__dirname, 'controllers', 'sitemap.xml'));
+        const readStream = createReadStream(path.join(__dirname,'sitemap.xml'));
         readStream.pipe(res);
 
     } catch (error) {
