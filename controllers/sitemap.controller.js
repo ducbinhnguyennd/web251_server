@@ -1,5 +1,5 @@
 const { SitemapStream, streamToPromise } = require('sitemap');
-const { createWriteStream, mkdtempSync, writeFileSync, readFileSync } = require('fs');
+const { createReadStream, mkdtempSync, writeFileSync, readFileSync } = require('fs');
 const { join } = require('path');
 
 const paths = ['/thanhtoan', '/shop', '/contact'];
