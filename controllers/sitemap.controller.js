@@ -1,11 +1,14 @@
 const { SitemapStream, streamToPromise } = require('sitemap');
-const { createWriteStream, createReadStream } = require('fs');
-var path = require('path');
+const { createWriteStream, mkdtempSync, writeFileSync, readFileSync } = require('fs');
+const { join } = require('path');
 
 const paths = ['/thanhtoan', '/shop', '/contact'];
 
 exports.sitemap = async (req, res, next) => {
     try {
+        // Tạo thư mục tạm thời
+        const tempDir = mkdtempSync('/tmp/');
+
         const smStream = new SitemapStream({ hostname: 'https://www.9mobile.shop' });
 
         // Thêm các đường dẫn vào sitemap
@@ -19,13 +22,12 @@ exports.sitemap = async (req, res, next) => {
         // Chuyển nội dung của sitemap thành một biến buffer
         const sitemapBuffer = await streamToPromise(smStream);
 
-        // Ghi nội dung của sitemap vào tệp sitemap.xml
-        const writeStream = createWriteStream(path.join(__dirname,'sitemap.xml'));
-        writeStream.write(sitemapBuffer);
-        writeStream.end();
+        // Ghi nội dung của sitemap vào thư mục tạm thời
+        const tempFilePath = join(tempDir, 'sitemap.xml');
+        writeFileSync(tempFilePath, sitemapBuffer);
 
         // Đọc và trả về nội dung của tệp sitemap.xml cho client
-        const readStream = createReadStream(path.join(__dirname,'sitemap.xml'));
+        const readStream = createReadStream(tempFilePath);
         readStream.pipe(res);
 
     } catch (error) {
