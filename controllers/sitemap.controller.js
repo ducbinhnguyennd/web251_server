@@ -2,7 +2,7 @@ const { SitemapStream, streamToPromise } = require('sitemap');
 const { createReadStream, mkdtempSync, writeFileSync, readFileSync } = require('fs');
 const { join } = require('path');
 
-const paths = ['/thanhtoan', '/shop', '/contact'];
+const paths = ['/','/thanhtoan', '/shop', '/contact'];
 
 exports.sitemap = async (req, res, next) => {
     try {
