@@ -285,19 +285,19 @@
           <p>Sử dụng bảng ở dưới để gửi yêu cầu</p>
           <form id="form" class="form-group flex-wrap">
             <div class="form-input col-lg-12 d-flex mb-3">
-              <input type="text" name="email" placeholder="Nhập tên của bạn" class="form-control ps-3 me-3 mb-3">
-              <input type="text" name="email" placeholder="Nhập email của bạn" class="form-control ps-3 mb-3">
+                <input type="text" name="name" placeholder="Nhập tên của bạn" class="form-control ps-3 me-3 mb-3">
+                <input type="text" name="email" placeholder="Nhập email của bạn" class="form-control ps-3 mb-3">
             </div>
             <div class="col-lg-12 mb-3">
-              <input type="text" name="email" placeholder="Số điện thoại" class="form-control ps-3">
+                <input type="text" name="phone" placeholder="Số điện thoại" class="form-control ps-3">
             </div>
-
             <div class="col-lg-12 mb-3">
-              <textarea placeholder="Viết thông tin bạn muốn gửi đến chúng tôi" class="form-control ps-3"
-                style="height:150px;"></textarea>
+                <textarea id="message" placeholder="Viết thông tin bạn muốn gửi đến chúng tôi" name="message" class="form-control ps-3" style="height:150px;"></textarea>
             </div>
-          </form>
-          <button class="btn btn-dark btn-medium text-uppercase btn-rounded-none">Gửi</button>
+        </form>   
+        <a href="#" onclick="prepareMailto();">
+          <button type="submit" class="btn btn-dark btn-medium text-uppercase btn-rounded-none">Gửi</button>
+      </a>   
         </div>
       </div>
     </div>
@@ -528,6 +528,18 @@
       </div>
     </div>
   </div>
+  <script>
+    function prepareMailto() {
+        // Lấy giá trị từ thẻ textarea
+        var message = document.getElementById("message").value;
+    
+        // Tạo liên kết mailto với nội dung từ textarea
+        var mailtoLink = "mailto:traz08102003@gmail.com?subject=Yêu%20cầu%20liên%20hệ&body=" + encodeURIComponent(message);
+    
+        // Mở liên kết mailto
+        window.location.href = mailtoLink;
+    }
+    </script>
   <script src="js/jquery-1.11.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>

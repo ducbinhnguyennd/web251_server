@@ -53,6 +53,11 @@ exports.shop = async (req, res, next) => {
   let list_TL = await myMD.spModel.find();
   res.render("home/shop.ejs", { listSP: list_TL });
 };
+exports.home2 = async (req, res, next) => {
+  let list_TL = await myMD.spModel.find();
+  let list_BL = await myMDBlog.blogModel.find();
+  res.render("home/shop2.ejs", { listSP: list_TL, listBL: list_BL  });
+};
 exports.contact = async (req, res, next) => {
   let list_TL = await myMD.spModel.find();
   res.render("home/contact.ejs", { listSP: list_TL });

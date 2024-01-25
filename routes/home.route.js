@@ -12,6 +12,8 @@ const checkAuth=require('../controllers/checkAuth')
 
 router.get('/', homeController.home);
 router.post('/', homeController.home);
+router.get('/ttshop', homeController.home2);
+
 
 router.get('/search', homeController.searchByName);
 
