@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>9 Mobile</title>
+    <title>TT SHOP</title>
     <meta charset="utf-8">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -562,87 +562,7 @@
         </div>
     </div>
 
-    <header id="header"
-        class="site-header header-scrolled position-fixed text-black bg-light mx-auto overflow-hidden position-relative">
-        <nav id="header-nav" class="navbar navbar-expand-lg px-3 mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">
-                    <img src="/images/main-logo.png" class="logo">
-                </a>
-                <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <svg class="navbar-icon">
-                        <use xlink:href="#navbar-icon"></use>
-                    </svg>
-                </button>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="bdNavbar"
-                    aria-labelledby="bdNavbarOffcanvasLabel">
-                    <div class="offcanvas-header px-4 pb-0">
-                        <a class="navbar-brand" href="/">
-                            <img src="/images/main-logo.png" class="logo">
-                        </a>
-                        <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas"
-                            aria-label="Close" data-bs-target="#bdNavbar"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul id="navbar"
-                            class="navbar-nav text-uppercase justify-content-end align-items-center flex-grow-1 pe-2">
-                            <li class="nav-item">
-                                <a class="nav-link me-4 active" href="#billboard">Trang Chủ</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link me-4" href="#company-services">Dịch Vụ</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link me-4" href="#mobile-products">Sản Phẩm</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link me-4" href="#latest-blog">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link me-4" href="/shop">Shop</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link me-4" href="/thanhtoan">Thanh toán</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link me-4" href="/contact">Liên hệ</a>
-                            </li>
 
-                            <li class="nav-item">
-                                <div class="user-items ps-5">
-                                    <ul class="d-flex justify-content-end list-unstyled">
-                                        <li class="search-item pe-3">
-                                            <a href="#" class="search-button">
-                                                <svg class="search">
-                                                    <use xlink:href="#search"></use>
-                                                </svg>
-                                            </a>
-                                        </li>
-                                        <li class="pe-3">
-                                            <a href="/login">
-                                                <svg class="user">
-                                                    <use xlink:href="#user"></use>
-                                                </svg>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/thanhtoan">
-                                                <svg class="cart">
-                                                    <use xlink:href="#cart"></use>
-                                                </svg>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
 
     <section id="billboard" class=" bg-light-blue ">
         <div class="swiper main-swiper">
@@ -771,9 +691,7 @@
                     <div class="row">
                         <div class="display-header d-flex justify-content-between pb-3 ">
                             <h2 class="display-7 text-dark text-uppercase">Sản Phẩm Bán Chạy Nhất</h2>
-                            <div class="btn-right">
-                                <a href="/shop" class="btn btn-medium btn-normal text-uppercase">Xem Thêm</a>
-                            </div>
+
                         </div>
                         <div class="swiper product-swiper ">
                             <div class="swiper-wrapper list">
@@ -787,9 +705,8 @@
                                             </div>
                                             <div class="cart-concern position-absolute">
                                                 <div class="cart-button d-flex">
-                                                    <a href="/chitiet/<%= row._id %>"
-                                                        class="btn btn-medium btn-black">Xem chi tiết<svg
-                                                            class="cart-outline">
+                                                    <a href="/ttshop/#lienhe" class="btn btn-medium btn-black">Mua
+                                                        hàng<svg class="cart-outline">
                                                             <use xlink:href="#cart-outline"></use>
                                                         </svg></a>
                                                 </div>
@@ -819,9 +736,7 @@
                     <div class="row">
                         <div class="display-header d-flex justify-content-between pb-3 ">
                             <h2 class="display-7 text-dark text-uppercase">Sản Phẩm Giảm Nhiều Nhất</h2>
-                            <div class="btn-right">
-                                <a href="/shop" class="btn btn-medium btn-normal text-uppercase">Xem thêm</a>
-                            </div>
+
                         </div>
                         <div class="divimgsale">
                             <img class="imgsale"
@@ -840,9 +755,8 @@
                                             </div>
                                             <div class="cart-concern position-absolute">
                                                 <div class="cart-button d-flex">
-                                                    <a href="/chitiet/<%= row._id %>"
-                                                        class="btn btn-medium btn-black">Xem chi tiết<svg
-                                                            class="cart-outline">
+                                                    <a href="/ttshop/#lienhe" class="btn btn-medium btn-black">Mua
+                                                        hàng<svg class="cart-outline">
                                                             <use xlink:href="#cart-outline"></use>
                                                         </svg></a>
                                                 </div>
@@ -867,27 +781,13 @@
                 </div>
                 <div class="swiper-pagination position-absolute text-center"></div>
             </section>
-            <section id="yearly-sale" class="bg-light-blue mt-2 mb-2 overflow-hidden sale45"
-                style="background-image: url('/images/single-image1.png');background-position: right; background-repeat: no-repeat; background-size: cover;">
-                <div class="row d-flex flex-wrap ">
-                    <div class="col-md-4 col-sm-8">
-                        <div class="text-content divsale45">
-                            <h3 class="h3sale" style="color: aliceblue;">Sale lên đến 45%</h3>
-                            <h3 class="h3sale" style="color: aliceblue;">cho mọi sản phẩm</h3>
-                            <a href="/shop" class="btn btn-medium btn-dark text-uppercase btn-rounded-none ">Shop
-                                Sale</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
             <section id="latest-blog" class="padding-large section">
                 <div class="container">
                     <div class="row">
                         <div class="display-header d-flex justify-content-between pb-3">
                             <h2 class="display-7 text-dark text-uppercase">Phụ kiện đi kèm</h2>
-                            <div class="btn-right">
-                                <a href="blog.html" class="btn btn-medium btn-normal text-uppercase">ĐỌC THÊM</a>
-                            </div>
+
                         </div>
                         <div class="post-grid d-flex flex-wrap justify-content-between">
                             <div class="col-lg-4 col-sm-12">
@@ -899,7 +799,7 @@
                                 <div class="card-body text-uppercase">
                                     <div class="card-meta text-muted">
                                         <span class="meta-date">Hàng chính hãng</span>
-                                        <span class="meta-category">- 9 Mobile</span>
+
                                     </div>
                                     <h3 class="card-title">
                                         <a href="#">Củ sạc nhanh Apple 20W Type-C</a>
@@ -915,7 +815,7 @@
                                 <div class="card-body text-uppercase">
                                     <div class="card-meta text-muted">
                                         <span class="meta-date">Hàng chính hãng</span>
-                                        <span class="meta-category">- 9 Mobile</span>
+
                                     </div>
                                     <h3 class="card-title">
                                         <a href="#">Dây cáp sạc nhanh Apple</a>
@@ -931,7 +831,7 @@
                                 <div class="card-body text-uppercase">
                                     <div class="card-meta text-muted">
                                         <span class="meta-date">Hàng chính hãng</span>
-                                        <span class="meta-category">- 9 Mobile</span>
+
                                     </div>
                                     <h3 class="card-title">
                                         <a href="#">Ốp lưng dẻo thời trang, cường lực chắc chắn</a>
@@ -943,241 +843,10 @@
                 </div>
             </section>
 
-            <section id="latest-blog" class="padding-large section">
-                <div class="container">
-                    <div class="row">
-                        <div class="display-header d-flex justify-content-between pb-3">
-                            <h2 class="display-7 text-dark text-uppercase">Bài đăng và tiện ích</h2>
-                            <div class="btn-right">
-                                <a href="latest-blog" class="btn btn-medium btn-normal text-uppercase">ĐỌC THÊM</a>
-                            </div>
-                        </div>
-                        <div class="post-grid d-flex flex-wrap justify-content-between">
-                            <% listBL.forEach((item)=> { %>
-                                <div class="col-lg-4 col-sm-12">
-                                    <div class="card border-none me-3">
-                                        <div class="card-image">
-                                            <img src="data:img_blog/jpeg;base64, <%= item.img_blog %>"
-                                                alt="product-item" class="img-fluid">
-                                        </div>
-                                    </div>
-                                    <div class="card-body text-uppercase">
-                                        <div class="card-meta text-muted">
-                                            <span class="meta-date">
-                                                <% const limitedContent=item.noidung_blog.length> 30 ?
-                                                    item.noidung_blog.slice(0, 30) + '...'
-                                                    : item.noidung_blog;
-                                                    %>
-                                                    <%= limitedContent %>
 
-                                            </span>
-
-                                        </div>
-                                        <h3 class="card-title">
-                                            <a href="/chitietblog/<%= item._id %>">
-                                                <%= item.tieude_blog %>
-                                            </a>
-                                        </h3>
-                                    </div>
-                                </div>
-                                <% }); %>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="testimonials" class="position-relative section">
-                <div class="container">
-                    <div class="row">
-                        <div class="review-content position-relative">
-                            <div
-                                class="swiper-icon swiper-arrow swiper-arrow-prev position-absolute d-flex align-items-center">
-                                <svg class="chevron-left">
-                                    <use xlink:href="#chevron-left" />
-                                </svg>
-                            </div>
-                            <div class="swiper testimonial-swiper">
-                                <div class="quotation text-center">
-                                    <svg class="quote">
-                                        <use xlink:href="#quote" />
-                                    </svg>
-                                </div>
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide text-center d-flex justify-content-center">
-                                        <div class="review-item col-md-10">
-                                            <i class="icon icon-review"></i>
-                                            <h4>“Chất Lượng Điều Khiển Thương Hiệu, Thương Hiệu Điều Khiển Cuộc Đời.
-                                                Điều đó không chỉ là lời
-                                                nói,
-                                                mà còn là tâm huyết và cam kết của chúng tôi với mọi sản phẩm. Chúng tôi
-                                                không chỉ tạo ra sản
-                                                phẩm,
-                                                chúng tôi tạo ra niềm tin, tạo ra sự hài lòng và tạo nên những kỷ niệm
-                                                đáng nhớ.”</blockquote>
-                                                <div class="rating">
-                                                    <svg class="star star-fill">
-                                                        <use xlink:href="#star-fill"></use>
-                                                    </svg>
-                                                    <svg class="star star-fill">
-                                                        <use xlink:href="#star-fill"></use>
-                                                    </svg>
-                                                    <svg class="star star-fill">
-                                                        <use xlink:href="#star-fill"></use>
-                                                    </svg>
-                                                    <svg class="star star-half">
-                                                        <use xlink:href="#star-half"></use>
-                                                    </svg>
-                                                    <svg class="star star-empty">
-                                                        <use xlink:href="#star-empty"></use>
-                                                    </svg>
-                                                </div>
-                                                <div class="author-detail">
-                                                    <div class="name text-dark text-uppercase pt-2">Emma Chamberlin
-                                                    </div>
-                                                </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide text-center d-flex justify-content-center">
-                                        <div class="review-item col-md-10">
-                                            <i class="icon icon-review"></i>
-                                            <h4>“Sản Phẩm Đi Cùng Cuộc Sống - Thương Hiệu Đi Cùng Niềm Tin. Với hơn một
-                                                thập kỷ kinh nghiệm,
-                                                chúng
-                                                tôi đã xây dựng một thương hiệu được khách hàng tin dùng và yêu thích.
-                                                Chúng tôi không ngừng
-                                                nâng
-                                                cao chất lượng để đồng hành cùng bạn trong mọi khía cạnh cuộc sống, từ
-                                                công việc đến giải trí,
-                                                từ
-                                                gia đình đến khám phá thế giới.”</blockquote>
-                                                <div class="rating">
-                                                    <svg class="star star-fill">
-                                                        <use xlink:href="#star-fill"></use>
-                                                    </svg>
-                                                    <svg class="star star-fill">
-                                                        <use xlink:href="#star-fill"></use>
-                                                    </svg>
-                                                    <svg class="star star-fill">
-                                                        <use xlink:href="#star-fill"></use>
-                                                    </svg>
-                                                    <svg class="star star-half">
-                                                        <use xlink:href="#star-half"></use>
-                                                    </svg>
-                                                    <svg class="star star-empty">
-                                                        <use xlink:href="#star-empty"></use>
-                                                    </svg>
-                                                </div>
-                                                <div class="author-detail">
-                                                    <div class="name text-dark text-uppercase pt-2">Jennie Rose</div>
-                                                </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="swiper-icon swiper-arrow swiper-arrow-next position-absolute d-flex align-items-center">
-                                <svg class="chevron-right">
-                                    <use xlink:href="#chevron-right" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </section>
-            <section id="subscribe" class="container-grid padding-large position-relative overflow-hidden section">
-                <div class="container">
-                    <div class="row">
-                        <div
-                            class="subscribe-content bg-dark d-flex flex-wrap justify-content-center align-items-center padding-medium">
-                            <div class="col-md-6 col-sm-12">
-                                <div class="display-header pe-3">
-                                    <h2 class="display-7 text-uppercase text-light">Đăng ký cho chúng tôi ngay</h2>
-                                    <p>Nhận tin tức mới nhất, cập nhật và giao dịch được gửi trực tiếp đến hộp thư đến
-                                        của bạn.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-5 col-sm-12">
-                                <form class="subscription-form validate">
-                                    <div class="input-group flex-wrap">
-                                        <input class="form-control btn-rounded-none" type="email" name="EMAIL"
-                                            placeholder="Địa chỉ email của bạn ở đây" required="">
-                                        <button class="btn btn-medium btn-primary text-uppercase btn-rounded-none"
-                                            type="submit" name="subscribe">Đăng ký</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="instagram" class="padding-large overflow-hidden no-padding-top section">
-                <div class="container">
-                    <div class="row">
-                        <div class="display-header text-uppercase text-dark text-center pb-3">
-                            <h2 class="display-7">Mua trên trang Facebook của chúng tôi</h2>
-                        </div>
-                        <div class="d-flex flex-wrap">
-                            <figure class="instagram-item pe-2">
-                                <a href="https://templatesjungle.com/" class="image-link position-relative">
-                                    <img src="/images/insta-item1.jpg" alt="instagram" class="insta-image">
-                                    <div class="icon-overlay position-absolute d-flex justify-content-center">
-                                        <svg class="instagram">
-                                            <use xlink:href="#instagram"></use>
-                                        </svg>
-                                    </div>
-                                </a>
-                            </figure>
-                            <figure class="instagram-item pe-2">
-                                <a href="https://www.facebook.com/9mobileshop251xadan"
-                                    class="image-link position-relative">
-                                    <img src="/images/insta-item2.jpg" alt="instagram" class="insta-image">
-                                    <div class="icon-overlay position-absolute d-flex justify-content-center">
-                                        <svg class="instagram">
-                                            <use xlink:href="#instagram"></use>
-                                        </svg>
-                                    </div>
-                                </a>
-                            </figure>
-                            <figure class="instagram-item pe-2">
-                                <a href="https://www.facebook.com/9mobileshop251xadan"
-                                    class="image-link position-relative">
-                                    <img src="/images/insta-item3.jpg" alt="instagram" class="insta-image">
-                                    <div class="icon-overlay position-absolute d-flex justify-content-center">
-                                        <svg class="instagram">
-                                            <use xlink:href="#instagram"></use>
-                                        </svg>
-                                    </div>
-                                </a>
-                            </figure>
-                            <figure class="instagram-item pe-2">
-                                <a href="https://www.facebook.com/9mobileshop251xadan"
-                                    class="image-link position-relative">
-                                    <img src="/images/insta-item4.jpg" alt="instagram" class="insta-image">
-                                    <div class="icon-overlay position-absolute d-flex justify-content-center">
-                                        <svg class="instagram">
-                                            <use xlink:href="#instagram"></use>
-                                        </svg>
-                                    </div>
-                                </a>
-                            </figure>
-                            <figure class="instagram-item pe-2">
-                                <a href="https://www.facebook.com/9mobileshop251xadan"
-                                    class="image-link position-relative">
-                                    <img src="/images/insta-item5.jpg" alt="instagram" class="insta-image">
-                                    <div class="icon-overlay position-absolute d-flex justify-content-center">
-                                        <svg class="instagram">
-                                            <use xlink:href="#instagram"></use>
-                                        </svg>
-                                    </div>
-                                </a>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     </div>
-    <div class="contact-us padding-large">
+    <div class="contact-us padding-large" id="lienhe">
         <div class="container">
             <div class="row">
                 <div class="contact-info col-lg-6 pb-3">
@@ -1188,19 +857,17 @@
                             <div class="content-box text-dark pe-4 mb-5">
                                 <h3 class="card-title text-uppercase text-decoration-underline">Địa chỉ</h3>
                                 <div class="contact-address pt-3">
-                                    <p>251 Xã Đàn, Đống Đa, Hà Nội</p>
+                                    <p>Ngã 4 Sở, Đống Đa, Hà Nội</p>
                                 </div>
                                 <div class="contact-number">
                                     <p>
-                                        <a href="#">+0812 251 251</a>
+                                        <a href="#">+0968672563</a>
                                     </p>
-                                    <p>
-                                        <a href="#">+0829 251 251</a>
-                                    </p>
+
                                 </div>
                                 <div class="email-address">
                                     <p>
-                                        <a href="#">9mobile@gmail.com</a>
+                                        <a href="#">hieudeptrai2563@gmail.com</a>
                                     </p>
                                 </div>
                             </div>
@@ -1209,14 +876,14 @@
                     </div>
                 </div>
                 <div class="inquiry-item col-lg-6">
-                    <h2 class="display-7 text-uppercase text-dark">Câu hỏi dành cho chúng tôi?</h2>
+                    <h2 class="display-7 text-uppercase text-dark">Liên hệ để mua hàng</h2>
                     <p>Sử dụng bảng ở dưới để gửi yêu cầu</p>
                     <form id="form" class="form-group flex-wrap">
                         <div class="form-input col-lg-12 d-flex mb-3">
                             <input type="text" name="name" placeholder="Nhập tên của bạn"
                                 class="form-control ps-3 me-3 mb-3">
-                            <input type="text" name="email" placeholder="Nhập email của bạn"
-                                class="form-control ps-3 mb-3">
+                            <!-- <input type="text" name="email" placeholder="Nhập email của bạn"
+                                class="form-control ps-3 mb-3"> -->
                         </div>
                         <div class="col-lg-12 mb-3">
                             <input type="text" name="phone" placeholder="Số điện thoại" class="form-control ps-3">
@@ -1227,146 +894,18 @@
                         </div>
                     </form>
                     <a href="#" onclick="prepareMailto();">
-                        <button type="submit"
+                        <button type="button"
                             class="btn btn-dark btn-medium text-uppercase btn-rounded-none">Gửi</button>
                     </a>
                 </div>
             </div>
         </div>
     </div>
-    <footer id="footer" class="overflow-hidden">
-        <div class="container">
-            <div class="row">
-                <div class="footer-top-area">
-                    <div class="row d-flex flex-wrap justify-content-between">
-                        <div class="col-lg-3 col-sm-6 pb-3">
-                            <div class="footer-menu">
-                                <img src="/images/main-logo.png" class="logo">
-                                <p> Chúng tôi tin rằng bạn sẽ yêu thích điện thoại này ngay từ lần đầu tiên bạn cầm nó
-                                    vào tay. Hãy đến
-                                    cửa hàng của chúng tôi để trải nghiệm sản phẩm này và cùng chúng tôi khám phá thế
-                                    giới công nghệ mới
-                                    mẻ!</p>
-                                <div class="social-links">
-                                    <ul class="d-flex list-unstyled">
-                                        <li>
-                                            <a href="#">
-                                                <svg class="facebook">
-                                                    <use xlink:href="#facebook" />
-                                                </svg>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <svg class="instagram">
-                                                    <use xlink:href="#instagram" />
-                                                </svg>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <svg class="twitter">
-                                                    <use xlink:href="#twitter" />
-                                                </svg>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <svg class="linkedin">
-                                                    <use xlink:href="#linkedin" />
-                                                </svg>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <svg class="youtube">
-                                                    <use xlink:href="#youtube" />
-                                                </svg>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-sm-6 pb-3">
-                            <div class="footer-menu text-uppercase">
-                                <h5 class="widget-title pb-2">Đường dẫn nhanh</h5>
-                                <ul class="menu-list list-unstyled text-uppercase">
-                                    <li class="menu-item pb-2">
-                                        <a href="#">Trang Chủ</a>
-                                    </li>
-                                    <li class="menu-item pb-2">
-                                        <a href="#">Thông Tin</a>
-                                    </li>
-                                    <li class="menu-item pb-2">
-                                        <a href="#">Cửa hàng</a>
-                                    </li>
-                                    <li class="menu-item pb-2">
-                                        <a href="#">Blogs</a>
-                                    </li>
-                                    <li class="menu-item pb-2">
-                                        <a href="#">Liên Hệ</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6 pb-3">
-                            <div class="footer-menu text-uppercase">
-                                <h5 class="widget-title pb-2">Trợ giúp & Thông tin Trợ giúp</h5>
-                                <ul class="menu-list list-unstyled">
-                                    <li class="menu-item pb-2">
-                                        <a href="#">Theo dõi đơn hàng của bạn</a>
-                                    </li>
-                                    <li class="menu-item pb-2">
-                                        <a href="#">Chính sách hoàn trả</a>
-                                    </li>
-                                    <li class="menu-item pb-2">
-                                        <a href="#">Liên hệ chúng tôi</a>
-                                    </li>
-                                    <li class="menu-item pb-2">
-                                        <a href="#">Câu hỏi thường gặp</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6 pb-3">
-                            <div class="footer-menu contact-item">
-                                <h5 class="widget-title text-uppercase pb-2">Liên hệ chúng tôi</h5>
-                                <p>Bạn có bất kỳ thắc mắc hoặc gợi ý nào không?<a
-                                        href="mailto:">ducbinhnguyennd@gmail.com</a>
-                                </p>
-                                <p>Nếu bạn cần hỗ trợ? Hãy gọi cho chúng tôi. <a href="">+0812 251 251</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-    </footer>
+
     <div id="footer-bottom">
         <div class="container">
             <div class="row d-flex flex-wrap justify-content-between">
-                <div c lass="col-md-4 col-sm-6">
-                    <div class="Shipping d-flex">
-                        <p>We ship with:</p>
-                        <div class="card-wrap ps-2">
-                            <img src="/images/dhl.png" alt="visa">
-                            <img src="/images/shippingcard.png" alt="mastercard">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="payment-method d-flex">
-                        <p>Các phương thức thanh toán:</p>
-                        <div class="card-wrap ps-2">
-                            <img src="/images/visa.jpg" alt="visa">
-                            <img src="/images/mastercard.jpg" alt="mastercard">
-                            <img src="/images/paypal.jpg" alt="paypal">
-                        </div>
-                    </div>
-                </div>
+
 
                 <div class="col-md-4 col-sm-6">
                     <div class="copyright">
@@ -1382,11 +921,22 @@
 
     <script>
         function prepareMailto() {
-            // Lấy giá trị từ thẻ textarea
-            var message = document.getElementById("message").value;
+            // Lấy giá trị từ các trường nhập liệu
+            var name = document.getElementById("form").elements["name"].value;
+            var phone = document.getElementById("form").elements["phone"].value;
+            var message = document.getElementById("form").elements["message"].value;
 
-            // Tạo liên kết mailto với nội dung từ textarea
-            var mailtoLink = "mailto:hieudeptrai2563@gmail.com?subject=Thắc%20mắc%20của%20khách%20hàng&body=" + encodeURIComponent(message);
+            // Kiểm tra xem nội dung có được nhập không
+            if (!message.trim()) {
+                alert("Vui lòng nhập nội dung trước khi gửi.");
+                return;
+            }
+
+            // Tạo liên kết mailto với thông tin từ các trường
+            var mailtoLink = "mailto:hieudeptrai2563@gmail.com?subject=Thắc%20mắc%20của%20khách%20hàng&body=";
+            mailtoLink += encodeURIComponent("Tên: " + name + "\n");
+            mailtoLink += encodeURIComponent("Số điện thoại: " + phone + "\n");
+            mailtoLink += encodeURIComponent("Nội dung: " + message);
 
             // Mở liên kết mailto
             window.location.href = mailtoLink;
