@@ -1,15 +1,15 @@
 <%- include('../include/header.ejs') %>
 
     <div class="container">
-        <h2><a href="/"><img style="width: 35px;" src="https://cdn-icons-png.flaticon.com/512/25/25694.png"></a> Trang
-            chủ</h2>
+        <h2>
+            <a href="/"><img style="width: 35px;" src="https://cdn-icons-png.flaticon.com/512/25/25694.png"></a> Trang chủ
+        </h2>
         <div class="row">
 
 
             <div class="row col-12 col-sm-4 col-md-12" style="height: 30px; text-align: center; margin-top: 10px;">
                 <form class="search d-flex" role="search" action="/search" method="GET">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                        name="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
                     <button class="btn btn-light" type="submit">Search</button>
                 </form>
 
@@ -67,28 +67,25 @@
                             <%= row.noidung %>
                         </td>
 
-                        <td> <a href="/home/edit/<%= row._id %>">
+                        <td>
+                            <a href="/home/edit/<%= row._id %>">
                                 <button type="button" class="btn btn-light">Sửa</button>
                             </a>
                             <form action="/home/deleteSP/<%= row._id %>" method="post" id="deleteForm">
-                                <button type="button" class="btn btn-light" data-bs-toggle="modal"
-                                    data-bs-target="#deleteModal<%= row._id %>">
+                                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#deleteModal<%= row._id %>">
                                     Xóa
                                 </button>
 
-                                <div class="modal fade" id="deleteModal<%= row._id %>" data-bs-keyboard="false"
-                                    aria-labelledby="staticBackdropLabel">
+                                <div class="modal fade" id="deleteModal<%= row._id %>" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Chắc chắn muốn
-                                                    xóa?</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
+                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Chắc chắn muốn xóa?
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Không</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
                                                 <button type="submit" class="btn btn-primary">Có</button>
                                             </div>
                                         </div>
@@ -111,9 +108,9 @@
             <table class="table table-bordered table-striped" style="text-align: center;">
                 <tr>
                     <th>ID</th>
-                    <th>Ảnh</th>
                     <th>Tiêu đề</th>
-                    <th>Nội dung</th>
+                    <th>Ảnh</th>
+
                     <th></th>
                 </tr>
 
@@ -122,44 +119,37 @@
                         <td>
                             <%= row._id %>
                         </td>
-                        <td style="text-align: center;">
-                            <img src="data:image/jpeg;base64, <%= row.img_blog %>" alt=""
-                                style="width: 80px; height: 80px;">
-                        </td>
-                        <td>
-                            <a href="/chitietblog/<%= row._id %>">
+                        <td style="word-wrap: break-word">
+                            <a href="/contentBlog/<%= encodeURIComponent(row.tieude_blog).replace(/%20/g, '-')%>">
                                 <%= row.tieude_blog %>
                             </a>
                         </td>
-                        <td>
-                            <% const limitedContent=row.noidung_blog.length> 150 ? row.noidung_blog.slice(0, 50) + '...'
-                                : row.noidung_blog;
-                                %>
-                                <%= limitedContent %>
+                        <td style="text-align: center;">
+                            <img src="<%= row.img_blog %>" alt="" style="width: 80px; height: 80px;">
                         </td>
                         <td>
                             <a href="/home/editBlog/<%= row._id %>">
                                 <button type="button" class="btn btn-light">Sửa</button>
                             </a>
+                            <a href="/home/contentBlog/<%= row._id %>">
+                                <button type="button" class="btn btn-light">Nội dung</button>
+                            </a>
+
                             <form action="/home/deleteBlog/<%= row._id %>" method="post" id="deleteForm">
-                                <button type="button" class="btn btn-light" data-bs-toggle="modal"
-                                    data-bs-target="#deleteModal<%= row._id %>">
+                                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#deleteModal<%= row._id %>">
                                     Xóa
                                 </button>
 
-                                <div class="modal fade" id="deleteModal<%= row._id %>" data-bs-keyboard="false"
-                                    aria-labelledby="staticBackdropLabel">
+                                <div class="modal fade" id="deleteModal<%= row._id %>" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Chắc chắn muốn
-                                                    xóa?</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
+                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Chắc chắn muốn xóa?
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Không</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
                                                 <button type="submit" class="btn btn-primary">Có</button>
                                             </div>
                                         </div>
