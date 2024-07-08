@@ -50,11 +50,15 @@
             }
             .sanpham {
                 width: 400px;
-                height: 400px;
+                height: 500px;
             }
             .anh {
                 width: 290px;
                 height: auto;
+            }
+            #header {
+                width: 100%;
+                height: 8%;
             }
             @keyframes shake {
                 0% {
@@ -125,6 +129,10 @@
             .anh {
                 width: 270px;
                 height: 310px;
+            }
+            #header {
+                width: 100%;
+                height: 7%;
             }
             @keyframes shake {
                 0% {
@@ -250,11 +258,11 @@
     <%- include('header') %>
 
 
-        <section id="selling-product" class="single-product padding-xlarge">
+        <section id="selling-product" class="single-product padding-small pt-5">
             <div class="container">
                 <div class="row mt-5">
                     <div class="col-lg-6">
-                        <div class="product-preview mb-3">
+                        <div class="product-preview mb-3 text-center">
                             <img src="data:image/jpeg;base64, <%= objSP.img %>" alt="single-product" class="img-fluid sanpham">
                         </div>
                     </div>
@@ -278,9 +286,13 @@
                 <%= objSP.price %>
               </strong>
                             </div>
-                            <p>
-                                <%= objSP.noidung %>
-                            </p>
+                            <div id="content">
+                                <p class="collapsed">
+                                    <%= objSP.noidung %>
+                                </p>
+                                <a href="#" id="toggleButton" style="color: red;">Xem thêm</a>
+                            </div>
+
                             <div class="cart-wrap padding-small">
                                 <div class="color-options product-select">
                                     <div class="color-toggle" data-option-index="0">
@@ -562,7 +574,7 @@
                 </div>
             </div>
         </section>
-        <section id="related-products" class="product-store position-relative padding-large">
+        <section id="related-products" class="product-store position-relative padding-small">
             <div class="container">
                 <div class="row">
                     <div class="display-header d-flex justify-content-between pb-3">
@@ -606,29 +618,7 @@
             </div>
             <div class="swiper-pagination position-absolute text-center"></div>
         </section>
-        <section id="subscribe" class="container-grid padding-large position-relative overflow-hidden">
-            <div class="container">
-                <div class="row">
-                    <div class="subscribe-content bg-dark d-flex flex-wrap justify-content-center align-items-center padding-medium">
-                        <div class="col-md-6 col-sm-12">
-                            <div class="display-header pe-3">
-                                <h2 class="display-7 text-uppercase text-light">Đăng ký cho chúng tôi ngay</h2>
-                                <p>
-                                    Nhận tin tức mới nhất, cập nhật và giao dịch được gửi trực tiếp đến hộp thư đến của bạn.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-5 col-sm-12">
-                            <form class="subscription-form validate">
-                                <div class="input-group flex-wrap">
-                                    <input class="form-control btn-rounded-none" type="email" name="EMAIL" placeholder="Địa chỉ email của bạn ở đây" required="">
-                                    <button class="btn btn-medium btn-primary text-uppercase btn-rounded-none" type="submit" name="subscribe">Đăng ký</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
         <!-- <section id="instagram" class="padding-large overflow-hidden no-padding-top">
       <div class="container">
         <div class="row">
@@ -690,155 +680,40 @@
         </div>
       </div>
     </section> -->
-        <footer id="footer" class="overflow-hidden">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-top-area">
-                        <div class="row d-flex flex-wrap justify-content-between">
-                            <div class="col-lg-3 col-sm-6 pb-3">
-                                <div class="footer-menu">
-                                    <img src="/images/main-logo.png" class="logo">
-                                    <p> Chúng tôi tin rằng bạn sẽ yêu thích điện thoại này ngay từ lần đầu tiên bạn cầm nó vào tay. Hãy đến cửa hàng của chúng tôi để trải nghiệm sản phẩm này và cùng chúng tôi khám phá thế giới công nghệ mới mẻ!
-                                    </p>
-                                    <div class="social-links">
-                                        <ul class="d-flex list-unstyled">
-                                            <li>
-                                                <a href="#">
-                                                    <svg class="facebook">
-                          <use xlink:href="#facebook" />
-                        </svg>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <svg class="instagram">
-                          <use xlink:href="#instagram" />
-                        </svg>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <svg class="twitter">
-                          <use xlink:href="#twitter" />
-                        </svg>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <svg class="linkedin">
-                          <use xlink:href="#linkedin" />
-                        </svg>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <svg class="youtube">
-                          <use xlink:href="#youtube" />
-                        </svg>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-sm-6 pb-3">
-                                <div class="footer-menu text-uppercase">
-                                    <h5 class="widget-title pb-2">Đường dẫn nhanh</h5>
-                                    <ul class="menu-list list-unstyled text-uppercase">
-                                        <li class="menu-item pb-2">
-                                            <a href="#">Trang Chủ</a>
-                                        </li>
-                                        <li class="menu-item pb-2">
-                                            <a href="#">Thông Tin</a>
-                                        </li>
-                                        <li class="menu-item pb-2">
-                                            <a href="#">Cửa hàng</a>
-                                        </li>
-                                        <li class="menu-item pb-2">
-                                            <a href="#latest-blog">Blogs</a>
-                                        </li>
-                                        <li class="menu-item pb-2">
-                                            <a href="#">Liên Hệ</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6 pb-3">
-                                <div class="footer-menu text-uppercase">
-                                    <h5 class="widget-title pb-2">Trợ giúp & Thông tin Trợ giúp</h5>
-                                    <ul class="menu-list list-unstyled">
-                                        <li class="menu-item pb-2">
-                                            <a href="#">Theo dõi đơn hàng của bạn</a>
-                                        </li>
-                                        <li class="menu-item pb-2">
-                                            <a href="#">Chính sách hoàn trả</a>
-                                        </li>
-                                        <li class="menu-item pb-2">
-                                            <a href="#">Liên hệ chúng tôi</a>
-                                        </li>
-                                        <li class="menu-item pb-2">
-                                            <a href="#">Câu hỏi thường gặp</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6 pb-3">
-                                <div class="footer-menu contact-item">
-                                    <h5 class="widget-title text-uppercase pb-2">Contact Us</h5>
-                                    <p>Bạn có bất kỳ thắc mắc hoặc gợi ý nào không?<a href="mailto:">ducbinhnguyennd@gmail.com</a>
-                                    </p>
-                                    <p>Nếu bạn cần hỗ trợ? Hãy gọi cho chúng tôi. <a href="">+0812 251 251</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr>
-        </footer>
-        <div id="footer-bottom">
-            <div class="container">
-                <div class="row d-flex flex-wrap justify-content-between">
-                    <div class="col-md-4 col-sm-6">
-                        <div class="Shipping d-flex">
-                            <p>We ship with:</p>
-                            <div class="card-wrap ps-2">
-                                <img src="/images/dhl.png" alt="visa">
-                                <img src="/images/shippingcard.png" alt="mastercard">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="payment-method d-flex">
-                            <p>Các phương thức thanh toán:</p>
-                            <div class="card-wrap ps-2">
-                                <img src="/images/visa.jpg" alt="visa">
-                                <img src="/images/mastercard.jpg" alt="mastercard">
-                                <img src="/images/paypal.jpg" alt="paypal">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="copyright">
-                            <p>© Copyright 2023 9Mobile. Design by Nguyễn Đức Bình
-                                <a href="https://templatesjungle.com/"></a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script>
-            function openMessenger() {
-                window.location.href = "https://www.messenger.com/t/105703318958498";
-            }
-        </script>
-        <script src="/js/jquery-1.11.0.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-        <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
-        <script type="text/javascript" src="/js/plugins.js"></script>
-        <script type="text/javascript" src="/js/script.js"></script>
+        <%- include('footer') %>
+
+            <script>
+                function openMessenger() {
+                    window.location.href = "https://www.messenger.com/t/105703318958498";
+                }
+            </script>
+            <script src="/js/jquery-1.11.0.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+            <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+            <script type="text/javascript" src="/js/plugins.js"></script>
+            <script type="text/javascript" src="/js/script.js"></script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    var content = document.getElementById("content");
+                    var paragraph = content.querySelector("p");
+                    var toggleButton = content.querySelector("#toggleButton");
+
+
+                    paragraph.classList.add("collapsed");
+
+                    toggleButton.addEventListener("click", function(e) {
+                        e.preventDefault();
+
+                        if (paragraph.classList.contains("collapsed")) {
+                            paragraph.classList.remove("collapsed");
+                            toggleButton.textContent = "Thu gọn"; // Chuyển nút sang "Thu gọn"
+                        } else {
+                            paragraph.classList.add("collapsed");
+                            toggleButton.textContent = "Xem thêm"; // Chuyển nút sang "Xem thêm"
+                        }
+                    });
+                });
+            </script>
 </body>
 
 </html>
