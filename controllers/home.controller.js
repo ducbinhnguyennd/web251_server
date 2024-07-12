@@ -41,7 +41,7 @@ async function resizeImage(buffer, width, height) {
 
 exports.home = async(req, res, next) => {
     let list_TL = await myMD.spModel.find();
-    let list_BL = await myMDBlog.blogModel.find();
+    let list_BL = await myMDBlog.blogModel.find().sort({ _id: -1 });
     res.render("home/index.ejs", { listSP: list_TL, listBL: list_BL });
 };
 exports.main = async(req, res, next) => {
