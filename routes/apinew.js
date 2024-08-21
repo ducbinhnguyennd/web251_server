@@ -91,7 +91,10 @@ router.post('/postblog', async (req, res) => {
 
 router.get('/contentBlog/:tieude', async (req, res) => {
   try {
-    const tieude_khongdau = decodeURIComponent(req.params.tieude).replace(/-/g, ' ')
+    const tieude_khongdau = decodeURIComponent(req.params.tieude).replace(
+      /-/g,
+      ' '
+    )
     const blog = await myMDBlog.blogModel.findOne({ tieude_khongdau })
 
     if (!blog) {
@@ -112,13 +115,14 @@ router.get('/contentBlog/:tieude', async (req, res) => {
       content,
       tieude: blog.tieude_blog,
       listBl,
-      image_blog: blog.img_blog
+      image_blog: blog.img_blog,
     })
   } catch (error) {
     console.error(error)
     res.status(500).json({ message: `Đã xảy ra lỗi: ${error}` })
   }
 })
+
 
 router.post('/deleteblog/:idblog', async (req, res) => {
   try {

@@ -279,12 +279,12 @@
     <%- include('header') %>
 
         <section id="latest-blog" class="section ">
-            <div class="container bg-light overflow-hidden" style=" border-radius: 50px; padding-left: 1%; padding-right: 1%; word-wrap: break-word;">
+            <div class="container bg-light overflow-hidden" style=" border-radius: 15px; padding-left: 1%; padding-right: 1%; word-wrap: break-word; padding-top: 10px;">
                 <div class="row">
                     <div class="post-grid d-flex flex-wrap justify-content-between flex-fill w-100">
 
-                        <div class="text-center">
-                            <h3 itemprop="name" class="display-7 text-uppercase" style="font-weight: bold; margin-top: 2%; ">
+                        <div style="width: 100%;">
+                            <h3 itemprop="name" class="display-7 text-uppercase text-center" style="font-weight: bold; margin-top: 2%; ">
                                 <%= tieude %>
                             </h3>
                         </div>
@@ -292,9 +292,9 @@
                             <div>
                                 <% content.splice(0.5).forEach((item) => { %>
                                     <div class="mb-4">
-                                        <h6 itemprop="name" class="display-7 text-uppercase" style="font-weight: bold;">
+                                        <h5 itemprop="name" class="display-7 " style="font-weight: bold;">
                                             <%= item.tieude %>
-                                        </h6>
+                                        </h5>
                                         <p style="color: black">
                                             <%- item.content.replace(/\\n/g, "<br>") %>
                                         </p>
