@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const homeController = require('../controllers/home.controller');
 const multer = require('multer');
-const { route, render } = require('..');
 const storage = multer.memoryStorage();
 const uploader = multer({ storage: storage });
 const checkAuth=require('../controllers/checkAuth')
