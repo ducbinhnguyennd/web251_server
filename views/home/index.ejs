@@ -196,8 +196,6 @@
                 animation: shake 0.5s;
             }
             body {
-               
-               
                 background-color: #333;
             }
             .section {
@@ -634,7 +632,7 @@
                                         <div class="swiper-slide">
                                             <div class="product-card position-relative">
                                                 <div class="image-holder">
-                                                    <img src="data:image/jpeg;base64, <%= row.img %>" alt="product-item" class="img-fluid anh">
+                                                    <img src="data:image/jpeg;base64, <%= row.img %>" alt="product-item" class="img-fluid anh" loading="lazy">
                                                 </div>
                                                 <div class="cart-concern position-absolute">
                                                     <div class="cart-button d-flex">
@@ -682,7 +680,7 @@
                                         <div class="swiper-slide">
                                             <div class="product-card position-relative">
                                                 <div class="image-holder">
-                                                    <img src="data:image/jpeg;base64, <%= row.img %>" alt="product-item" class="img-fluid anh">
+                                                    <img src="data:image/jpeg;base64, <%= row.img %>" alt="product-item" class="img-fluid anh" loading="lazy">
                                                 </div>
                                                 <div class="cart-concern position-absolute">
                                                     <div class="cart-button d-flex">
@@ -727,7 +725,7 @@
                         <div class="row">
                             <div class="display-header d-flex justify-content-between pb-3">
                                 <h2 class="display-7 text-dark text-uppercase">Phụ kiện đi kèm</h2>
-                                
+
                             </div>
                             <div class="post-grid d-flex flex-wrap justify-content-between">
                                 <div class="col-lg-4 col-sm-12">
@@ -792,14 +790,14 @@
                                 </div>
                             </div>
                             <div class="post-grid d-flex flex-wrap justify-content-between">
-                                <% listBL.slice(0,3).forEach((item)=> { %>
+                                <% listBL.slice(0, 3).forEach((item)=> { %>
                                     <div class="col-lg-4 col-sm-12">
                                         <div class="card border-none me-3">
                                             <div class="card-image text-center">
                                                 <img src="<%= item.img_blog %>" alt="product-item" class="img-fluid" style="height: 200px;">
                                             </div>
                                         </div>
-                                        <div class="card-body text-uppercase">
+                                        <div class="card-body overflow-hidden text-center">
                                             <div class="card-meta text-muted">
                                             </div>
                                             <h3 class="card-title">
