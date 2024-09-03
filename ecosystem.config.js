@@ -1,0 +1,12 @@
+module.exports={
+    apps:[
+        {
+            name:'9mobile',
+            script:'./index.js',
+            env:{
+                NODE_ENV:'production',
+                PORT:1001
+            }
+        }
+    ]
+}
