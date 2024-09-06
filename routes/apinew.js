@@ -35,6 +35,13 @@ function replaceKeywordsWithLinks (content, keywords, urlBase) {
 
   return content
 }
+function removeSpecialChars (str) {
+  // Danh sách các ký tự đặc biệt bạn muốn xóa
+  const specialChars = /[:+,!@#$%^&*()-]/g // Thay đổi biểu thức chính quy theo các ký tự bạn muốn xóa
+
+  // Xóa các ký tự đặc biệt
+  return str.replace(specialChars, '')
+}
 
 
 router.post('/postblog', async (req, res) => {
@@ -42,7 +49,9 @@ router.post('/postblog', async (req, res) => {
     const { tieude_blog, img, content, tieude, img_blog, keywords, urlBase } =
       req.body
 
-    const tieude_khongdau = unicode(tieude_blog)
+    const tieude_khongdau1 = unicode(tieude_blog)
+    const tieude_khongdau = removeSpecialChars(tieude_khongdau1)
+
     const blog = new myMDBlog.blogModel({
       tieude_blog,
       img_blog,
@@ -89,6 +98,7 @@ router.post('/postblog', async (req, res) => {
     res.status(500).json({ message: `Đã xảy ra lỗi: ${error}` })
   }
 })
+
 router.post(
   '/postblog2',
   uploads.fields([
